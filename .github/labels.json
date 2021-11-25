@@ -1,0 +1,74 @@
+[
+	{
+		"name": "Priority: very high",
+		"color": "ff0000",
+		"aliases": [],
+		"description": "우선순위 매우 높음"
+	},
+	{
+		"name": "Priority: high",
+		"color": "ffff00",
+		"aliases": [],
+		"description": "우선순위 높음"
+	},
+	{
+		"name": "Priority: medium",
+		"color": "888888",
+		"aliases": [],
+		"description": "우선순위 중간"
+	},
+	{
+		"name": "Priority: low",
+		"color": "00ff00",
+		"aliases": [],
+		"description": "우선순위 낮음"
+	},
+	{
+		"name": "Priority: very low",
+		"color": "0000ff",
+		"aliases": [],
+		"description": "우선순위 매우 낮음"
+	},
+	{
+		"name": "Documentation",
+		"color": "0075ca",
+		"aliases": [],
+		"description": "문서작업"
+	},
+	{
+		"name": "Bug",
+		"color": "B00800",
+		"aliases": [],
+		"description": "버그 발견/수정"
+	},
+	{
+		"name": "Enhancement",
+		"color": "007fff",
+		"aliases": [],
+		"description": "기능구현"
+	},
+	{
+		"name": "Study",
+		"color": "000000",
+		"aliases": [],
+		"description": "프로젝트를 진행하면서 학습해야할 것들"
+	},
+	{
+		"name": "Environment",
+		"color": "0E8A16",
+		"aliases": [],
+		"description": "개발환경/환경 설정과 관련된 것들"
+	},
+	{
+		"name": "good first issue",
+		"color": "5C37FF",
+		"aliases": [],
+		"description": "처음 진행하기 좋은 이슈들입니다"
+	},
+	{
+		"name": "Test",
+		"color": "E35355",
+		"aliases": [],
+		"description": "기능테스트"
+	}
+]

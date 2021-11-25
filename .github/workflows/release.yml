@@ -1,0 +1,32 @@
+name: HotSource_CD
+
+on:
+  push:
+    branches: [ release ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 8
+      uses: actions/setup-java@v2
+      with:
+        java-version: '8'
+        distribution: 'adopt'
+        cache: gradle
+    - name: Build java 8
+      run: gradle build
+    
+    - name: Make Directory
+      run: mkdir -p deploy
+
+    - name: Copy Jar
+      run: cp ./build/libs/*.jar ./deploy
+
+    - name: Deploy
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      run: aws s3 cp --region ap-northeast-2 ./deploy/*.jar s3://hotsourcerepo/

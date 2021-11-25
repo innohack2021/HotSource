@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+	id "org.sonarqube" version "3.3"
+}
+
+group 'com.innohotsource'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "innohack2021_HotSource"
+    property "sonar.organization", "innohack2021"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
+}
+
+test {
+    useJUnitPlatform()
+}
