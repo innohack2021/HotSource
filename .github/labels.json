@@ -62,7 +62,13 @@
 	{
 		"name": "good first issue",
 		"color": "5C37FF",
-		"aliaise": [],
+		"aliases": [],
 		"description": "처음 진행하기 좋은 이슈들입니다"
+	},
+	{
+		"name": "Test",
+		"color": "E35355",
+		"aliases": [],
+		"description": "기능테스트"
 	}
 ]
