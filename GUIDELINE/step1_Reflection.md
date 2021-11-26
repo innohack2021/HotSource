@@ -1,4 +1,7 @@
-Reflection의 사용 이유, 사용 방법을 작성하는 곳입니다.
+Reflection 적용방법   
+   
+      
+      
 ==============
 
 Reflection의 사용 이유 
