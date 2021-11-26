@@ -63,13 +63,14 @@
     > cat ~/.ssh/id_rsa.pub 의 값을 자신의 레포지토리의 ssh 키 관리 세팅 창에서 추가한다.
 
 
-![clone image](./img/2.clone.JPG)
+## ![clone image](./img/2.clone.JPG)
+-------------------------------
     클론하는 방법. 레포지토리에서 code를 누른 후 ssh 주소를 복사한다.
     git clone {주소}를 터미널에서 타이핑하면 클론이 된다.
 
-![ssh image](./img/ssh.JPG)
+## ![ssh image](./img/ssh.JPG)
+--------------------
     ssh키가 자신의 레포지토리에 추가되어있지않을 떼 추가하는 방법
     자세한 것은 인터넷에 자료가 많으니 찾아보기 권장
     settings -> SSH and GPG keys에 들어가면 된다.
 
-    
