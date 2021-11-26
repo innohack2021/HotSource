@@ -45,71 +45,72 @@ public @interface [어노테이션명]{
 이후에 내부 함수에는 사용자가 어노테이션을 사용할 시에 필요한 함수들을 구현하면 된다.
 
 ## 예제 코드
-	ExAnnotation.java
-	```java
-	package ex.annotation;
 
-	import java.lang.annotation.ElementType;
-	import java.lang.annotation.Retention;
-	import java.lang.annotation.RetentionPolicy;
-	import java.lang.annotation.Target;
+ExAnnotation.java
+```java
+package ex.annotation;
 
-	@Target({ElementType.METHOD})
-	@Retention(RetentionPolicy.RUNTIME)
-	public @interface ExAnnotation {
-	    String star() default "*";
-	    int number() default 1;
-	}
-	```
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-	MyStar.java
-	``` java
-	package ex.annotation;
+@Target({ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface ExAnnotation {
+    String star() default "*";
+    int number() default 1;
+}
+```
 
-	public class MyStar {
-    	@ExAnnotation
-    	public void method1() {
-        	System.out.println("저 별을 줄께");
-    	}
+MyStar.java
+``` java
+package ex.annotation;
 
-    	@ExAnnotation(star = "#", number = 20)
-    	public void method2() {
-    	    System.out.println("저 별들을 줄께");
-    	}
+public class MyStar {
+    @ExAnnotation
+    public void method1() {
+        System.out.println("저 별을 줄께");
+    }
 
-    	@ExAnnotation(star = "@")
-    	public void method3() {
-    	    System.out.println("저 별을 따서 줄께");
-   		}
-	}
-	```
+    @ExAnnotation(star = "#", number = 20)
+    public void method2() {
+        System.out.println("저 별들을 줄께");
+    }
 
-	Main.java
-	``` java
-	package ex.annotation;
+    @ExAnnotation(star = "@")
+    public void method3() {
+        System.out.println("저 별을 따서 줄께");
+   	}
+}
+```
 
-	import java.lang.reflect.Method;
+Main.java
+``` java
+package ex.annotation;
 
-	public class Main {
-    	public static void main(String[] args) {
-        	Method[] methodList=MyStar.class.getMethods();
+import java.lang.reflect.Method;
 
-        	for (Method m : methodList) {
-            	if (m.isAnnotationPresent(ExAnnotation.class)) {
-                	System.out.println(m.getName());
-                	ExAnnotation annotation=m.getDeclaredAnnotation(ExAnnotation.class);
+public class Main {
+    public static void main(String[] args) {
+        Method[] methodList=MyStar.class.getMethods();
 
-	                String star=annotation.star();
-	                int number=annotation.number();
+        for (Method m : methodList) {
+            if (m.isAnnotationPresent(ExAnnotation.class)) {
+                System.out.println(m.getName());
+                ExAnnotation annotation=m.getDeclaredAnnotation(ExAnnotation.class);
 
-    	            for (int i = 0; i < number; i++)
-    	                System.out.print(star);
-    	            System.out.println();
-    	        }
-    	    }
-    	}
-	}
-	```
+                String star=annotation.star();
+                int number=annotation.number();
+
+                for (int i = 0; i < number; i++)
+                    System.out.print(star);
+                System.out.println();
+            }
+        }
+    }
+}
+```
 
 
 출력결과
