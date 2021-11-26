@@ -8,7 +8,7 @@ JSON 데이터를 처리하기 위한 자바 라이브러리이며, 타사 라�
 
 ## Json-Simple 자주 쓰는 함수 및 예제
 
-1. JSONObject().put() 함수
+1. JSONObject().put() 함수<br/>
 Json형태로 만드는 함수이다.<br/>
 key와 value를 넣어 json자료형을 만들 수 있다.<br/>
 ex) JSONObject().put("key", "value");<br/>
@@ -35,7 +35,7 @@ public class Main {
 ```
 
 <br/>
-2. JSONArray().add() 함수
+2. JSONArray().add() 함수<br/>
 Json에 리스트를 넣을 때 쓰는 함수이다. 아래 예제를 참고하자.<br/>
 
 ```java
@@ -65,7 +65,7 @@ public class Main {
 ```
 
 
-3. JSONArray().get() 함수
+3. JSONArray().get() 함수<br/>
 위의 2예제에서 만들어진 가상의 JSON을 담은 obj가 그대로 있다고 가정하자.<br/>
 해당 JSON에서 값을 가져올 수 있도록 해주는 함수이다.<br/>
 
