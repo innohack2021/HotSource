@@ -58,5 +58,11 @@
 		"color": "0E8A16",
 		"aliases": [],
 		"description": "개발환경/환경 설정과 관련된 것들"
+	},
+	{
+		"name": "good first issue",
+		"color": "5C37FF",
+		"aliaise": [],
+		"description": "처음 진행하기 좋은 이슈들입니다"
 	}
 ]
