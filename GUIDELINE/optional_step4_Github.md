@@ -49,4 +49,4 @@
 
     > 사진과 같이 레포지토리에서 fork 버튼을 찾아 자신의 레포지토리에 fork한다.
 
-![fork image](./img/fork.jpg)
+![fork image](./img/fork.JPG)
