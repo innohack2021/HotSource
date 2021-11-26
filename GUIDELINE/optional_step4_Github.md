@@ -1,6 +1,3 @@
-![plot](./img/image.JPG)
-이미지 이름 꼭 대문자로!!
-
 
 깃허브 협업!!! 방법
 ======================
@@ -17,7 +14,7 @@
 목차
 ------
 
-### 기본적인 커밋방법
+## 기본적인 커밋 방법
 
     1. 자료 Fork
  
@@ -34,7 +31,7 @@
     7. 관리자가 Merge
 
 
-### 이슈가 생겼을 때
+## 이슈가 생겼을 때
 
     1. Issue 발행
 
@@ -42,8 +39,9 @@
 
     3. 관리자가 Merge
 
+## 기본적인 커밋 방법
 
-* ### 1.자료 Fork
+* ### 1. 자료 Fork
     > 협업을 시작 할 때, 자료를 복사하여 자기 저장소로 가져와야 한다.
 
     > 그렇기에 일단 협업을 할 프로젝트 레포지토리로 이동한 뒤, fork 버튼을 눌러 fork 한다.
@@ -92,8 +90,9 @@ $ git branch sungjcho main
 
 <img src="./img/switch_branch.JPG" width="600" height="50"/>
 ```
-$ git checkout sungjcho
+git checkout sungjcho
 ```
+
 * ### 4. Add & Commit & Push
     
 ```
@@ -122,7 +121,7 @@ git push
 <img src="./img/6comparepull.JPG" width="600" height="100"/>
 
     > 클릭 후 여러 가지 작성
-<img src="./img/6pr_list.JPG" width="1000" height="800"/>
+<img src="./img/6pr_list.JPG" width="1000" height="600"/>
 
     > 종류 : 이 문서의 경우 참고자료 작성이기 때문에 setup으로 선택
 
@@ -140,16 +139,29 @@ git push
 
     > Projects : 프로젝트를 선택한다. 기본적으로 자신이 수행하는 프로젝트를 선택한다.
 
-    > Milestone : 진행의 척도를 확인하기 위해 milestone을 사용한다.
+    > Milestone : 진행의 척도를 확인하기 위해 milestone을 사용한다. 배포 버전이 정해졌을 때, 커밋을 합침. 
+
+    > 그렇게 되면 commit log에 내용을 볼 수 없기 때문에 milestone은 특정 기간의 이슈들을 묶는 역할을 한다.
+
+* ### 7. 관리자가 Merge
+
+<img src="./img/Merge1.JPG" width="500" height="300"/>
+<img src="./img/Merge2.JPG" width="500" height="300"/>
+<img src="./img/Merge3.JPG" width="500" height="300"/>
+<img src="./img/Merge4.JPG" width="500" height="300"/>
+
+    > 
 
 
-* ###7. 관리자가 Merge
+## 이슈가 생겼을 때
 
-
-    ### 이슈가 생겼을 때
-
-    1. Issue 발행
+    1. Issue card 발행
 
     2. 코드 commit 후 PR 작성
 
+    > PR은 위에서 발행한 PR과 같이 진행한다.
+
     3. 관리자가 Merge
+
+    > Merge는 위에서 관리자 Merge작업과 동일하게 진행한다.
+    
