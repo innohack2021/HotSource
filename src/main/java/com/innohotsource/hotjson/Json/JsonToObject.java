@@ -50,7 +50,7 @@ public class JsonToObject {
         if (json.get(field.getName()) != null && json.get(field.getName()) instanceof Object){
             fromJson(json, instance.getClass().getDeclaredField(field.getName()));
             System.out.println("instance.getClass().getField(field.getName()) = " + instance.getClass().getField(field.getName()));
-            fromJson(, instance);
+//            fromJson(, instance);
             System.out.println("json.get(field.getName()) = " + json.get(field.getName()));
         }
         if (field.getType() == Map.class){
