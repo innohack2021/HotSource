@@ -14,6 +14,9 @@
 <br/>
 
 목차
+<br/>
+<br/>
+<br/>
 ------
 
 ## 기본적인 커밋 방법
@@ -74,8 +77,16 @@
 
 ![clone image](./img/2.clone.JPG)
 -------------------------------
+
+
     클론하는 방법. 레포지토리에서 code를 누른 후 ssh 주소를 복사한다.
     git clone {주소}를 터미널에서 타이핑하면 클론이 된다.
+
+    
+<br/>
+<br/>
+<br/>
+
 <img src="./img/ssh.JPG" width="650" height="450"/>
 
 --------------------
@@ -86,6 +97,7 @@
 <br/>
 
 <br/>
+<br/>
 
 * ### 3. Branch 생성 및 변경
     > Branch를 생성하는 방법은 $ git branch branchName main 명령어를 사용하여
@@ -94,20 +106,31 @@
 
     > 본 프로젝트의 기본 branch는 main이기 때문에 main을 넣었다.
 
+<br/>
+<br/>
+<br/>
+
 <img src="./img/create_branch.JPG" width="600" height="50"/>
-```
-$ git branch sungjcho main
-```
+
+    git branch sungjcho main
+
 
     > 변경하기 위해서는 switch 명령을 사용하여, 브런치 변경 후 작업을 해야 한다.
 
     > 현재 컴퓨터 깃 버전이 2.17.1 이라, git checkout 명령을 사용해야 브런치 명 변경이 가능하다.
 
-<img src="./img/switch_branch.JPG" width="600" height="50"/>
-```
-git checkout sungjcho
-```
+<br/>
+<br/>
+<br/>
 
+<img src="./img/switch_branch.JPG" width="600" height="50"/>
+
+
+    git checkout sungjcho
+
+
+
+<br/>
 <br/>
 <br/>
 
@@ -121,28 +144,44 @@ git push
 간단하게 푸쉬한다.
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
 
 * ### 5. Fetch & Merge
     > 레포지토리와 연동을 위해 병합해야한다.
 
+    <br/><br/><br/>
+
 <img src="./img/fetchandmerge.JPG" width="200" height="100"/>
+
 > 레포지토리에서 fetch upstream 클릭
+
+<br/><br/><br/>
+
 <img src="./img/fetchandmerge2.JPG" width="400" height="300"/>
+
 > 그 후 Fetch and Merge 클릭
 
 > 그러면 로컬과 자신의 레포지토리가 같아질 것이다.
 
 <br/>
-<br/>
+<br/><br/><br/><br/>
 
 * ### 6. Pull Request 
     > main에 자신의 코드를 병합하기 위해서는 pull 을 요청해야 한다.
 
     > 자신의 레포지토리에 변화가 생기면 compare and pull request 버튼이 활성화된다.
 
+<br/><br/><br/>
+
 <img src="./img/6comparepull.JPG" width="600" height="100"/>
 
     > 클릭 후 여러 가지 작성
+
+<br/><br/><br/><br/><br/><br/>
+
+
 <img src="./img/6pr_list.JPG" width="1000" height="600"/>
 
     > 종류 : 이 문서의 경우 참고자료 작성이기 때문에 setup으로 선택
@@ -167,15 +206,18 @@ git push
 
 <br/>
 <br/>
+<br/><br/><br/>
 
 * ### 7. 관리자가 Merge
 
-### 최종적으로 Merge를 해야, Main이든 어디든 병합되어 프로젝트가 완성된다.
-### 협업을 하기 위해서는 Merge가 필수적이며, 실수하지 않게 조심해야 한다.
+#### 최종적으로 Merge를 해야, Main이든 어디든 병합되어 프로젝트가 완성된다.
+#### 협업을 하기 위해서는 Merge가 필수적이며, 실수하지 않게 조심해야 한다.
 
 <img src="./img/Merge1.JPG" width="500" height="300"/>
 
     > (관리자 입장) PR요청이 오면 리스트가 나오고, 클릭한다.
+
+<br/><br/><br/>
 
 <img src="./img/Merge2.JPG" width="1000" height="500"/>
 
@@ -185,9 +227,16 @@ git push
 
 > 1. 코멘트를 달기위해 comment를 쓰거나,  2. 승인하기위해 approve 를 누르거나, 3. 작업 변경을 거절하거나 선택한다.
 
+
+<br/><br/><br/>
+
 <img src="./img/Merge3.JPG" width="700" height="500"/>
 
 > 승인하면 changed approved가 나오고, 최종적으로 Merge하기 위해 Squash and merge를 누른다.
+
+
+<br/><br/><br/>
+
 
 <img src="./img/Merge4.JPG" width="700" height="500"/>
 
@@ -197,7 +246,7 @@ git push
 
 <br/>
 
-<br/>
+<br/><br/><br/><br/>
 
 ## 이슈가 생겼을 때 
 
@@ -206,7 +255,7 @@ git push
 ### 협업 중 이슈가 생기면, 그것을 해결하기 위해 여러 사람들이 볼 수 있도록 issue card를 발행한다.
 
 <br/>
-<br/>
+<br/><br/><br/>
 
 > 1. Issue card 발행
 
@@ -217,12 +266,15 @@ git push
 
 > 그 후 new issue를 클릭하여 새로운 이슈를 발행한다.
 
+<br/><br/><br/><br/>
+
+
 <img src="./img/issue2.JPG" width="700" height="500"/>
 
 > PR과 비슷하게 이슈카드를 발행한다. 종류, 내용, 체크리스트를 적고 이 이슈를 해결할사람, 라벨을 달아준다. 
 
 <br/>
-<br/>
+<br/><br/><br/>
 
     2. 코드 commit 후 PR 작성
 
