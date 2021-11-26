@@ -53,19 +53,55 @@ class Tiger{
 ```
     이렇게 사용하면, 객체가 새로 추가될 때 계속 if문이 추가되면서 기하급수적으로 코드가 늘어난다.
 
-### second step : interface를 사용하여 코드를 한줄로 줄임
-#### third step : Reflection을 활용하여 최적화
-##### H5
-###### H6
-
-이건 제목
-=============================================
+## second step : interface를 사용하여 코드를 한줄로 줄임
 
     Java 문법 하이라이팅까지 하는법...!
 ```java
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
+public class Main {
+    public static void main(String[] args) {
+        String input = "Tiger";
+
+        Animal[] Animals = {new Dog(), new Cat(), new Tiger()}; // 클래스 추가시 마다 계속 객체를 추가해줘야함.
+        for (Animal a : Animals) {
+           if (input.equals(a.getName())) {
+               a.sound();
+           }
+        }
+    }
 }
+
+interface Animal{
+    public void sound();
+    public String getName();
+}
+
+class Dog implements Animal{
+    public void sound(){
+        System.out.println("멍! 멍!");
+    }
+    public String getName(){
+        return "Dog";
+    }
+}
+
+class Cat implements Animal{
+    public void sound(){
+        System.out.println("야~~옹!");
+    }
+    public String getName(){
+        return "Cat";
+    }
+}
+
+class Tiger implements Animal{
+    public void sound(){
+        System.out.println("어~~~흥!");
+    }
+    public String getName() {
+        return "Tiger";
+    }
+}
+
 ```
+    
+    interface 활용 시 코드는 크게 늘어나지 않지만, 클래스가 추가될 때마다 객체를 injection 또는 하드코딩으로 추가해줘야함
