@@ -18,28 +18,28 @@
 
 ### 기본적인 커밋방법
 
-* 1. 자료 Fork
+    1. 자료 Fork
  
-* 2. 내 github에서 로컬 저장소로 클론
+    2. 내 github에서 로컬 저장소로 클론
 
-* 3. Branch 생성 및 변경
+    3. Branch 생성 및 변경
 
-* 4. Add & Commit & Push
+    4. Add & Commit & Push
 
-* 5. Fetch & Merge
+    5. Fetch & Merge
 
-* 6. Pull Request 
+    6. Pull Request 
 
-* 7. 관리자가 Merge
+    7. 관리자가 Merge
 
 
 ### 이슈가 생겼을 때
 
-* 1. Issue 발행
+    1. Issue 발행
 
-* 2. 코드 commit 후 PR 작성
+    2. 코드 commit 후 PR 작성
 
-* 3. 관리자가 Merge
+    3. 관리자가 Merge
 
 
 * #### 1.자료 Fork
