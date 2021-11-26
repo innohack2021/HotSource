@@ -15,7 +15,8 @@ Reflection의 사용 이유
 
 
 # Reflection을 사용하는 이유를 코드를 통해 알아보겠습니다.
-## first step : if문 로직을 사용하여 구현
+
+## First step : if문 로직을 사용하여 구현
 ```java
 public class Main {
     public static void main(String[] args) {
@@ -53,7 +54,7 @@ class Tiger{
 ```
     이렇게 사용하면, 객체가 새로 추가될 때 계속 if문이 추가되면서 기하급수적으로 코드가 늘어난다.
 
-## second step : interface를 사용하여 코드를 한줄로 줄임
+## Second step : interface를 사용하여 코드를 한줄로 줄임
 
     Java 문법 하이라이팅까지 하는법...!
 ```java
@@ -105,3 +106,42 @@ class Tiger implements Animal{
 ```
     
     interface 활용 시 코드는 크게 늘어나지 않지만, 클래스가 추가될 때마다 객체를 injection 또는 하드코딩으로 추가해줘야함
+
+
+## Third step : Reflection을 사용하여 최종적으로 최적화
+
+```java
+import java.lang.reflect.Method;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        String input = "Tiger";
+        Class<?> clz = Class.forName(input);
+        Object o = clz.newInstance();
+        Method m = clz.getMethod("sound");
+        m.invoke(o,null);
+    }
+}
+
+interface Animal{
+    public void sound();
+}
+
+class Dog implements Animal{
+    public void sound(){
+        System.out.println("멍! 멍!");
+    }
+}
+
+class Cat implements Animal{
+    public void sound(){
+        System.out.println("야~~옹!");
+    }
+}
+
+class Tiger implements Animal{
+    public void sound(){
+        System.out.println("어~~~흥!");
+    }
+}
+```
