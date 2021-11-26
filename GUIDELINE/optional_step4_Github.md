@@ -67,12 +67,26 @@
 -------------------------------
     클론하는 방법. 레포지토리에서 code를 누른 후 ssh 주소를 복사한다.
     git clone {주소}를 터미널에서 타이핑하면 클론이 된다.
-## <img src="./img/ssh.JPG" width="200" height="400"/>
+## <img src="./img/ssh.JPG" width="600" height="400"/>
 ## ![ssh image](./img/ssh.JPG)
 --------------------
     ssh키가 자신의 레포지토리에 추가되어있지않을 떼 추가하는 방법
     자세한 것은 인터넷에 자료가 많으니 찾아보기 권장
     settings -> SSH and GPG keys에 들어가면 된다.
 
+* ### 3. Branch 생성 및 변경
+    > Branch를 생성하는 방법은 $ git branch branchName main 명령어를 사용하여
 
+    > 만들고자 하는 브런치이름을 branchName에 작성하고, main 은 분기해 나올 branch를 작성한다.
 
+    > 본 프로젝트의 기본 branch는 main이기 때문에 main을 넣었다.
+
+## <img src="./img/create_branch.JPG" width="600" height="50"/>
+
+    4. Add & Commit & Push
+
+    5. Fetch & Merge
+
+    6. Pull Request 
+
+    7. 관리자가 Merge
