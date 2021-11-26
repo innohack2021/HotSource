@@ -10,6 +10,8 @@
 
     이 글을 읽는 독자도 깃허브에 한 발 더 나아가 훌륭한 개발자로 도약하길 바란다.
 
+<br/>
+<br/>
 
 목차
 ------
@@ -39,7 +41,13 @@
 
     3. 관리자가 Merge
 
+<br/>
+<br/>
+
 ## 기본적인 커밋 방법
+
+<br/>
+<br/>
 
 * ### 1. 자료 Fork
     > 협업을 시작 할 때, 자료를 복사하여 자기 저장소로 가져와야 한다.
@@ -51,6 +59,9 @@
 ![fork image](./img/fork.JPG)
 
     > 그러면 자신의 레포지토리에 fork된 레포지토리가 생길 것이다.
+
+<br/>
+<br/>
 
 * ### 2. 내 github에서 로컬 저장소로 클론
 
@@ -71,6 +82,10 @@
     ssh키가 자신의 레포지토리에 추가되어있지않을 떼 추가하는 방법
     자세한 것은 인터넷에 자료가 많으니 찾아보기 권장
     settings -> SSH and GPG keys에 들어가면 된다.
+
+<br/>
+
+<br/>
 
 * ### 3. Branch 생성 및 변경
     > Branch를 생성하는 방법은 $ git branch branchName main 명령어를 사용하여
@@ -93,6 +108,9 @@ $ git branch sungjcho main
 git checkout sungjcho
 ```
 
+<br/>
+<br/>
+
 * ### 4. Add & Commit & Push
     
 ```
@@ -101,6 +119,8 @@ git commit -m "commit message "
 git push
 ```
 간단하게 푸쉬한다.
+<br/>
+<br/>
 
 * ### 5. Fetch & Merge
     > 레포지토리와 연동을 위해 병합해야한다.
@@ -112,6 +132,8 @@ git push
 
 > 그러면 로컬과 자신의 레포지토리가 같아질 것이다.
 
+<br/>
+<br/>
 
 * ### 6. Pull Request 
     > main에 자신의 코드를 병합하기 위해서는 pull 을 요청해야 한다.
@@ -143,6 +165,9 @@ git push
 
     > 그렇게 되면 commit log에 내용을 볼 수 없기 때문에 milestone은 특정 기간의 이슈들을 묶는 역할을 한다.
 
+<br/>
+<br/>
+
 * ### 7. 관리자가 Merge
 
 ### 최종적으로 Merge를 해야, Main이든 어디든 병합되어 프로젝트가 완성된다.
@@ -168,12 +193,20 @@ git push
 
 > 마지막으로 comment와 confirm Squash and merge를 누르면 Merge가 된다.
 
+<br/>
+
+<br/>
+
+<br/>
 
 ## 이슈가 생겼을 때 
 
 <br/>
 
 ### 협업 중 이슈가 생기면, 그것을 해결하기 위해 여러 사람들이 볼 수 있도록 issue card를 발행한다.
+
+<br/>
+<br/>
 
 > 1. Issue card 발행
 
@@ -188,9 +221,15 @@ git push
 
 > PR과 비슷하게 이슈카드를 발행한다. 종류, 내용, 체크리스트를 적고 이 이슈를 해결할사람, 라벨을 달아준다. 
 
+<br/>
+<br/>
+
     2. 코드 commit 후 PR 작성
 
     > PR은 위에서 발행한 PR과 같이 진행한다.
+
+<br/>
+<br/>
 
     3. 관리자가 Merge
 
