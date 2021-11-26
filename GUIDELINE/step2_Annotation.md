@@ -46,7 +46,7 @@ public @interface [어노테이션명]{
 
 ## 예제 코드
 	ExAnnotation.java
-	~~~ java
+	```java
 	package ex.annotation;
 
 	import java.lang.annotation.ElementType;
@@ -60,32 +60,32 @@ public @interface [어노테이션명]{
 	    String star() default "*";
 	    int number() default 1;
 	}
-	~~~
+	```
 
 	MyStar.java
-	~~~ java
+	``` java
 	package ex.annotation;
 
 	public class MyStar {
-    @ExAnnotation
-    public void method1() {
-        System.out.println("저 별을 줄께");
-    }
+    	@ExAnnotation
+    	public void method1() {
+        	System.out.println("저 별을 줄께");
+    	}
 
-    @ExAnnotation(star = "#", number = 20)
-    public void method2() {
-        System.out.println("저 별들을 줄께");
-    }
+    	@ExAnnotation(star = "#", number = 20)
+    	public void method2() {
+    	    System.out.println("저 별들을 줄께");
+    	}
 
-    @ExAnnotation(star = "@")
-    public void method3() {
-        System.out.println("저 별을 따서 줄께");
-    }
-}
-	~~~
+    	@ExAnnotation(star = "@")
+    	public void method3() {
+    	    System.out.println("저 별을 따서 줄께");
+   		}
+	}
+	```
 
 	Main.java
-	~~~ java
+	``` java
 	package ex.annotation;
 
 	import java.lang.reflect.Method;
@@ -109,18 +109,18 @@ public @interface [어노테이션명]{
     	    }
     	}
 	}
-	~~~
+	```
 
 
 출력결과
-~~~
+```
 method1
 *
 method2
 ####################
 method3
 @
-~~~
+```
 
 
 ##### 참고 사이트
