@@ -82,10 +82,37 @@
     > 본 프로젝트의 기본 branch는 main이기 때문에 main을 넣었다.
 
 ## <img src="./img/create_branch.JPG" width="600" height="50"/>
+```
+$ git branch sungjcho main
+```
 
-    4. Add & Commit & Push
+    > 변경하기 위해서는 switch 명령을 사용하여, 브런치 변경 후 작업을 해야 한다.
 
-    5. Fetch & Merge
+    > 현재 컴퓨터 깃 버전이 2.17.1 이라, git checkout 명령을 사용해야 브런치 명 변경이 가능하다.
+
+## <img src="./img/switch_branch.JPG" width="600" height="50"/>
+```
+$ git checkout sungjcho
+```
+* ### 4. Add & Commit & Push
+    
+```
+git add .
+git commit -m "commit message "
+git push
+```
+간단하게 푸쉬한다.
+
+* ### 5. Fetch & Merge
+    > 레포지토리와 연동을 위해 병합해야한다.
+
+## <img src="./img/fetchandmerge.JPG" width="600" height="300"/>
+> 레포지토리에서 fetch upstream 클릭
+## <img src="./img/fetchandmerge2.JPG" width="600" height="400"/>
+> 그 후 Fetch and Merge 클릭
+
+> 그러면 로컬과 자신의 레포지토리가 같아질 것이다.
+
 
     6. Pull Request 
 
