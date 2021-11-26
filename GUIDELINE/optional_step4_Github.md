@@ -160,29 +160,31 @@ git push
 
 > 1. 코멘트를 달기위해 comment를 쓰거나,  2. 승인하기위해 approve 를 누르거나, 3. 작업 변경을 거절하거나 선택한다.
 
-<img src="./img/Merge3.JPG" width="500" height="300"/>
+<img src="./img/Merge3.JPG" width="700" height="500"/>
 
 > 승인하면 changed approved가 나오고, 최종적으로 Merge하기 위해 Squash and merge를 누른다.
 
-<img src="./img/Merge4.JPG" width="500" height="300"/>
+<img src="./img/Merge4.JPG" width="700" height="500"/>
 
 > 마지막으로 comment와 confirm Squash and merge를 누르면 Merge가 된다.
 
 
-## 이슈가 생겼을 때
+## 이슈가 생겼을 때 
+
+<br/>
 
 ### 협업 중 이슈가 생기면, 그것을 해결하기 위해 여러 사람들이 볼 수 있도록 issue card를 발행한다.
 
 > 1. Issue card 발행
 
-<img src="./img/issue1.JPG" width="500" height="300"/>
+<img src="./img/issue1.JPG" width="700" height="500"/>
 
 
 > 첫 번째로 레포지토리의 issue를 클릭하여 이슈 창으로 이동한다.
 
 > 그 후 new issue를 클릭하여 새로운 이슈를 발행한다.
 
-<img src="./img/issue2.JPG" width="500" height="300"/>
+<img src="./img/issue2.JPG" width="700" height="500"/>
 
 > PR과 비슷하게 이슈카드를 발행한다. 종류, 내용, 체크리스트를 적고 이 이슈를 해결할사람, 라벨을 달아준다. 
 
