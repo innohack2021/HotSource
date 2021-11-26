@@ -34,6 +34,7 @@ public class Main {
 {"fork":5,"name":"HotSource","age":2021}
 ```
 
+
 2. JSONArray().add() 함수
 Json에 리스트를 넣을 때 쓰는 함수이다. 아래 예제를 참고하자.
 
@@ -62,6 +63,7 @@ public class Main {
 ```
 {"name":"HotSource","humans":["human1","human2","human3"]}
 ```
+
 
 3. JSONArray().get() 함수
 위의 2예제에서 만들어진 가상의 JSON을 담은 obj가 그대로 있다고 가정하자.
