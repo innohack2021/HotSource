@@ -16,29 +16,33 @@
 목차
 ------
 
-## 기본적인 커밋방법
+### 기본적인 커밋방법
 
-1. fork
+* 1. 자료 Fork
  
-2. 클론
+* 2. 내 github에서 로컬 저장소로 클론
 
-3. branch 생성 및 변경
+* 3. Branch 생성 및 변경
 
-4. add commit  push
+* 4. Add & Commit & Push
 
-5. fetch & merge
+* 5. Fetch & Merge
 
-6. pull request 
+* 6. Pull Request 
 
-7. 관리자가 merge
-
-
-## 이슈가 생겼을 때
-
-1. issue 발행
-
-2. 코드 커밋 후 PR 작성
-
-3. 관리자가 merge
+* 7. 관리자가 Merge
 
 
+### 이슈가 생겼을 때
+
+* 1. Issue 발행
+
+* 2. 코드 commit 후 PR 작성
+
+* 3. 관리자가 Merge
+
+
+* #### 1.자료 Fork
+    > 협업을 시작 할 때, 자료를 복사하여 자기 저장소로 가져와야 한다.
+    > 그렇기에 일단 협업을 할 프로젝트 레포지토리로 이동한 뒤, fork 버튼을 눌러 fork 한다.
+    
