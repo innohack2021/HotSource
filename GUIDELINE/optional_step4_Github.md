@@ -145,30 +145,46 @@ git push
 
 * ### 7. 관리자가 Merge
 
+### 최종적으로 Merge를 해야, Main이든 어디든 병합되어 프로젝트가 완성된다.
+### 협업을 하기 위해서는 Merge가 필수적이며, 실수하지 않게 조심해야 한다.
+
 <img src="./img/Merge1.JPG" width="500" height="300"/>
 
     > (관리자 입장) PR요청이 오면 리스트가 나오고, 클릭한다.
 
 <img src="./img/Merge2.JPG" width="1000" height="500"/>
 
-    > PR내용을 확인하기 위해 File changed 를 클릭한다.
+> PR내용을 확인하기 위해 File changed 를 클릭한다.
 
-    > Review changes를 누르고
+> Review changes를 누르고
 
-    > 1. 코멘트를 달기위해 comment를 쓰거나,  2. 승인하기위해 approve 를 누르거나, 3. 작업 변경을 거절하거나 선택한다.
+> 1. 코멘트를 달기위해 comment를 쓰거나,  2. 승인하기위해 approve 를 누르거나, 3. 작업 변경을 거절하거나 선택한다.
 
 <img src="./img/Merge3.JPG" width="500" height="300"/>
 
-    > 승인하면 changed approved가 나오고, 최종적으로 Merge하기 위해 Squash and merge를 누른다.
+> 승인하면 changed approved가 나오고, 최종적으로 Merge하기 위해 Squash and merge를 누른다.
 
 <img src="./img/Merge4.JPG" width="500" height="300"/>
 
-    > 마지막으로 comment와 confirm Squash and merge를 누르면 Merge가 된다.
+> 마지막으로 comment와 confirm Squash and merge를 누르면 Merge가 된다.
 
 
 ## 이슈가 생겼을 때
 
-    1. Issue card 발행
+### 협업 중 이슈가 생기면, 그것을 해결하기 위해 여러 사람들이 볼 수 있도록 issue card를 발행한다.
+
+> 1. Issue card 발행
+
+<img src="./img/issue1.JPG" width="500" height="300"/>
+
+
+> 첫 번째로 레포지토리의 issue를 클릭하여 이슈 창으로 이동한다.
+
+> 그 후 new issue를 클릭하여 새로운 이슈를 발행한다.
+
+<img src="./img/issue2.JPG" width="500" height="300"/>
+
+> PR과 비슷하게 이슈카드를 발행한다. 종류, 내용, 체크리스트를 적고 이 이슈를 해결할사람, 라벨을 달아준다. 
 
     2. 코드 commit 후 PR 작성
 
