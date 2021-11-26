@@ -151,19 +151,19 @@ git push
 
 <img src="./img/Merge2.JPG" width="1000" height="500"/>
 
-###    > PR내용을 확인하기 위해 File changed 를 클릭한다.
+    > PR내용을 확인하기 위해 File changed 를 클릭한다.
 
- ###   > Review changes를 누르고
+    > Review changes를 누르고
 
-   ### > 1. 코멘트를 달기위해 comment를 쓰거나,  2. 승인하기위해 approve 를 누르거나, 3. 작업 변경을 거절하거나 선택한다.
+    > 1. 코멘트를 달기위해 comment를 쓰거나,  2. 승인하기위해 approve 를 누르거나, 3. 작업 변경을 거절하거나 선택한다.
 
 <img src="./img/Merge3.JPG" width="500" height="300"/>
 
-  ###  > 승인하면 changed approved가 나오고, 최종적으로 Merge하기 위해 Squash and merge를 누른다.
+    > 승인하면 changed approved가 나오고, 최종적으로 Merge하기 위해 Squash and merge를 누른다.
 
 <img src="./img/Merge4.JPG" width="500" height="300"/>
 
-  ###  > 마지막으로 comment와 confirm Squash and merge를 누르면 Merge가 된다.
+    > 마지막으로 comment와 confirm Squash and merge를 누르면 Merge가 된다.
 
 
 ## 이슈가 생겼을 때
