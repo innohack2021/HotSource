@@ -1,4 +1,5 @@
-![plot](./img/image.jpg)
+![plot](./img/image.JPG)
+이미지 이름 꼭 대문자로!!
 
 
 깃허브 협업!!! 방법
@@ -50,3 +51,25 @@
     > 사진과 같이 레포지토리에서 fork 버튼을 찾아 자신의 레포지토리에 fork한다.
 
 ![fork image](./img/fork.JPG)
+
+    > 그러면 자신의 레포지토리에 fork된 레포지토리가 생길 것이다.
+
+2. 내 github에서 로컬 저장소로 클론
+
+    > 이 작업은 기존에 많이 했던 클론작업이라 크게 어렵지 않다.
+
+    > ssh 키를 등록이 안되어있다면 ssh-keygen으로 ssh키를 발급받고
+
+    > cat ~/.ssh/id_rsa.pub 의 값을 자신의 레포지토리의 ssh 키 관리 세팅 창에서 추가한다.
+
+
+![clone image](./img/2.clone.JPG)
+    클론하는 방법. 레포지토리에서 code를 누른 후 ssh 주소를 복사한다.
+    git clone {주소}를 터미널에서 타이핑하면 클론이 된다.
+
+![ssh image](./img/ssh.JPG)
+    ssh키가 자신의 레포지토리에 추가되어있지않을 떼 추가하는 방법
+    자세한 것은 인터넷에 자료가 많으니 찾아보기 권장
+    settings -> SSH and GPG keys에 들어가면 된다.
+
+    
