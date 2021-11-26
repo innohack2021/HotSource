@@ -147,3 +147,4 @@ class Tiger implements Animal{
     }
 }
 ```
+    객체 정보가 추가돼도, 코드는 하나도 바꾸지 않아도 된다.
