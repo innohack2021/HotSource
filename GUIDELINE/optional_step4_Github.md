@@ -74,3 +74,5 @@
     자세한 것은 인터넷에 자료가 많으니 찾아보기 권장
     settings -> SSH and GPG keys에 들어가면 된다.
 
+
+
