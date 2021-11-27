@@ -51,7 +51,7 @@ public class ObjectToJson {
                 continue;
             }
 
-            // Arr 혹은 List 인지 확인하고 처리하는 로직? 아마도 필요할 것 같음...
+
 
             if(value instanceof Object){
                 JSONObject newMap = toJson(value);
