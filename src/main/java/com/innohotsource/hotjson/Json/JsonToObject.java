@@ -12,22 +12,26 @@ import java.util.List;
 public class JsonToObject {
 
     public static Object fromJson(JSONObject json,Object instance){
+        fromJsonHide(json, instance);
+        return instance;
+    }
 
+    private static void fromJsonHide(JSONObject json, Object instance) {
         Field[] fields = instance.getClass().getDeclaredFields();
         Arrays.stream(fields).forEach(
                 field -> {
                     field.setAccessible(true);
                     try {
                         fieldSet(field, json, instance);
-                    } catch (IllegalAccessException | InvocationTargetException | InstantiationException | NoSuchMethodException e) {
+                    } catch (IllegalAccessException e) {
                         e.printStackTrace();
                     }
                 }
         );
-        return instance;
     }
 
-    private static void fieldSet(Field field, JSONObject json, Object instance) throws IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchMethodException {
+
+    private static void fieldSet(Field field, JSONObject json, Object instance) throws IllegalAccessException{
         Object value = json.get(field.getName());
         if (value instanceof String) {
             field.set(instance, value);
@@ -59,7 +63,7 @@ public class JsonToObject {
                     try {
                         field.setAccessible(true);
                         fieldSet(field, jsonObject, o1);
-                    } catch (IllegalAccessException | InvocationTargetException | InstantiationException | NoSuchMethodException e) {
+                    } catch (IllegalAccessException e) {
                         e.printStackTrace();
                     }
                 }
@@ -70,10 +74,10 @@ public class JsonToObject {
     private static <T> T createInstance(Class<T> classType) {
         try {
             return classType.getConstructor().newInstance();
-        }catch (InvocationTargetException | IllegalAccessException |NoSuchMethodException | InstantiationException e) {
+        }catch (IllegalAccessException | NoSuchMethodException | InstantiationException | InvocationTargetException e) {
             e.printStackTrace();
-            throw new RuntimeException(e);
         }
+        return null;
     }
 
 }

@@ -3,8 +3,7 @@ package com.innohotsource.hotjson;
 public class Hello {
 
     public static void main(String[] args) {
-        System.out.println("Welcome to HotJson");
-		System.out.println("for SoncarCloud TEST");
+
     }
 
 }

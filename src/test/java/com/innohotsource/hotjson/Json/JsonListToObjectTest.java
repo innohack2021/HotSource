@@ -2,9 +2,10 @@ package com.innohotsource.hotjson.Json;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
 
 public class JsonListToObjectTest {
     
@@ -46,5 +47,6 @@ public class JsonListToObjectTest {
         Sample1 sample1 = (Sample1) json.fromJson(sample, new Sample1());
         System.out.println("sample1.tostring = " + sample1.toString());
 
+        Assertions.assertEquals(sample1.getName(), "sampleName");
     }
 }
