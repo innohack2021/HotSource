@@ -1,6 +1,5 @@
 package com.innohotsource.hotjson.Json;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.junit.jupiter.api.Test;
 
@@ -12,13 +11,17 @@ class JsonToObjectTest {
     void fromJson() throws IllegalAccessException {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("name", "testName");
-        jsonObject.put("Id", 1L);
+        jsonObject.put("id", 1L);
 
         JSONObject jsonObject1 = new JSONObject();
-        jsonObject1.put("listName", "aaaa");
+        jsonObject1.put("subName", "aaaa");
+        jsonObject1.put("subId", 2L);
 
-        jsonObject.put("testList", jsonObject1);
 
+        JSONObject sub = new JSONObject();
+        sub.put("subSubName", "sub");
+        jsonObject1.put("sub",sub);
+        jsonObject.put("subSample", jsonObject1);
         /**
          * {
          *   "testList":[{"listName":"testListName"}],
@@ -31,6 +34,8 @@ class JsonToObjectTest {
 
         Sample sample = (Sample) jsonToObject.fromJson(jsonObject, new Sample());
         System.out.println("sample = " + sample);
+
+
     }
 
 }

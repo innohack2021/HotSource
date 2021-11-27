@@ -1,27 +1,23 @@
 package com.innohotsource.hotjson.Json;
 
-import com.sun.jdi.ClassType;
 import org.json.simple.JSONObject;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class JsonToObject {
 
-    public static Object fromJson(JSONObject json, Object instance){
-        Class clazz = instance.getClass();
-        Field[] fields = clazz.getDeclaredFields();
+    public static Object fromJson(JSONObject json,Object instance){
+
+        Field[] fields = instance.getClass().getDeclaredFields();
         Arrays.stream(fields).forEach(
                 field -> {
                     field.setAccessible(true);
                     try {
-                        System.out.println("field.getType() = " + field.getType());
                         fieldSet(field, json, instance);
-                    } catch (IllegalAccessException | NoSuchFieldException e) {
+                    } catch (IllegalAccessException | NoSuchFieldException | InvocationTargetException | NoSuchMethodException | InstantiationException e) {
                         e.printStackTrace();
                     }
                 }
@@ -29,35 +25,51 @@ public class JsonToObject {
         return instance;
     }
 
-    private static void fieldSet(Field field, JSONObject json, Object instance) throws IllegalAccessException, NoSuchFieldException {
-
-        if (field.getType() == String.class){
+    private static void fieldSet(Field field, JSONObject json, Object instance) throws IllegalAccessException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException, InstantiationException {
+        if (json.get(field.getName()) instanceof String){
             field.set(instance,json.get(field.getName()));
         }
-        if (field.getType() == Long.class){
+        else if (json.get(field.getName()) instanceof Long){
             field.set(instance, json.get(field.getName()));
         }
-        if (field.getType()  ==  Integer.class){
+        else if (json.get(field.getName())  instanceof  Integer){
             field.set(instance, json.get(field.getName()));
         }
-        if (field.getType() ==  Float.class){
+        else if (json.get(field.getName()) instanceof Float){
             field.set(instance, json.get(field.getName()));
         }
-        if (field.getType() ==  Number.class){
+        else if (json.get(field.getName()) instanceof Number){
             field.set(instance, json.get(field.getName()));
+        }
+        else if (field.getType() == Map.class){
+            System.out.println("MAP json.get(field.getName()) = " + json.get(field.getName()));
+
+        }
+        else if (json.get(field.getName()) != null){
+            JSONObject jsonObject = (JSONObject) json.get(field.getName());
+            Class<?> clazz  = field.getType();
+            Object tempObject = fromJson0(jsonObject,clazz);
+            field.set(instance, tempObject);
         }
 
-        if (json.get(field.getName()) != null && json.get(field.getName()) instanceof Object){
-            fromJson(json, instance.getClass().getDeclaredField(field.getName()));
-            System.out.println("instance.getClass().getField(field.getName()) = " + instance.getClass().getField(field.getName()));
-//            fromJson(, instance);
-            System.out.println("json.get(field.getName()) = " + json.get(field.getName()));
-        }
-        if (field.getType() == Map.class){
-            fromJson(json, json.get(field.getName()));
-            System.out.println("json.get(field.getName()) = " + json.get(field.getName()));
-        }
     }
+
+    private static Object fromJson0(JSONObject jsonObject,Class clazz){
+        Field[] fields = clazz.getDeclaredFields();
+        Object o1 = createInstance(clazz);
+        Arrays.stream(fields).forEach(
+                field -> {
+                    try {
+                        field.setAccessible(true);
+                        fieldSet(field, jsonObject, o1);
+                    } catch (IllegalAccessException | NoSuchFieldException | NoSuchMethodException | InvocationTargetException | InstantiationException e) {
+                        e.printStackTrace();
+                    }
+                }
+        );
+        return o1;
+    }
+
     private static <T> T createInstance(Class<T> classType) {
         try {
             return classType.getConstructor().newInstance();
