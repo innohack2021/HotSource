@@ -4,6 +4,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 public class JsonListToObjectTest {
     
     @Test
@@ -43,5 +45,6 @@ public class JsonListToObjectTest {
         JsonToObject json = new JsonToObject();
         Sample1 sample1 = (Sample1) json.fromJson(sample, new Sample1());
         System.out.println("sample1.tostring = " + sample1.toString());
+
     }
 }

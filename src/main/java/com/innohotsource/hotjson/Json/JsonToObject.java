@@ -28,17 +28,18 @@ public class JsonToObject {
     }
 
     private static void fieldSet(Field field, JSONObject json, Object instance) throws IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchMethodException {
-        if (json.get(field.getName()) instanceof String) {
-            field.set(instance, json.get(field.getName()));
-        } else if (json.get(field.getName()) instanceof Long) {
-            field.set(instance, json.get(field.getName()));
-        } else if (json.get(field.getName()) instanceof Integer) {
-            field.set(instance, json.get(field.getName()));
-        } else if (json.get(field.getName()) instanceof Float) {
-            field.set(instance, json.get(field.getName()));
-        } else if (json.get(field.getName()) instanceof Number) {
-            field.set(instance, json.get(field.getName()));
-        } else if (field.getType() == List.class) {
+        Object value = json.get(field.getName());
+        if (value instanceof String) {
+            field.set(instance, value);
+        } else if (value instanceof Long) {
+            field.set(instance, value);
+        } else if (value instanceof Integer) {
+            field.set(instance, value);
+        } else if (value instanceof Float) {
+            field.set(instance, value);
+        } else if (value instanceof Number) {
+            field.set(instance, value);
+        } else if (value instanceof List) {
             JSONArray jsonArray = (JSONArray) json.get(field.getName());
             field.set(instance,jsonArray);
             }
