@@ -15,4 +15,8 @@ public class Sample1 {
                 ", subSampleList=" + subSampleList +
                 '}';
     }
+
+    public String getName() {
+        return name;
+    }
 }
