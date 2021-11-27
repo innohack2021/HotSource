@@ -5,7 +5,7 @@ name: HotSource_CI
 
 on:
   push:
-    patchs:
+    paths:
       - 'src/**'
     branches: [ main ]
   pull_request:
