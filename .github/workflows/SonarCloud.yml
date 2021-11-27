@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'src/**'
+      - '.github/workflows/SonarCloud.yml'
     branches: [ main ]
 jobs:
   build:
