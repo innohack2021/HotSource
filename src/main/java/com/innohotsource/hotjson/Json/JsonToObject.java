@@ -5,7 +5,8 @@ import org.json.simple.JSONObject;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
-import java.util.Map;
+import java.util.List;
+
 
 public class JsonToObject {
 
@@ -41,8 +42,8 @@ public class JsonToObject {
         else if (json.get(field.getName()) instanceof Number){
             field.set(instance, json.get(field.getName()));
         }
-        else if (field.getType() == Map.class){
-            System.out.println("MAP json.get(field.getName()) = " + json.get(field.getName()));
+        else if (field.getType() == List.class){
+
 
         }
         else if (json.get(field.getName()) != null){
