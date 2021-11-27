@@ -5,8 +5,14 @@ name: HotSource_CI
 
 on:
   push:
+    patches:
+      - 'src/**'
     branches: [ main ]
   pull_request:
+    paths-ignore:
+      - 'GUIDELINE/**'
+    paths:
+      - 'src/**'
     branches: [ main ]
 
 jobs:

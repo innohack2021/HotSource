@@ -1,11 +1,15 @@
 name: Build
 on:
   push:
-    branches:
-      - main
+    patches:
+      - 'src/**'
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
+    paths-ignore:
+      - 'GUIDELINE/**'
+    paths:
+      - 'src/**'
+    branches: [ main ]
     types: [opened, synchronize, reopened]
 jobs:
   build:
