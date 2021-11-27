@@ -15,6 +15,8 @@ import java.util.Map;
 
 public class Hello {
     public static void main(String[] args) {
-        System.out.println("Hello Bye TEST");
+
+        System.out.println("Welcome to HotJson");
+		System.out.println("for SoncarCloud TEST");
     }
 }
