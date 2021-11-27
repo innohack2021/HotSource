@@ -19,7 +19,7 @@ public class JsonToObject {
                     field.setAccessible(true);
                     try {
                         fieldSet(field, json, instance);
-                    } catch (IllegalAccessException | InvocationTargetException | InstantiationException | NoSuchMethodException e) {
+                    } catch (IllegalAccessException e) {
                         e.printStackTrace();
                     }
                 }
@@ -27,7 +27,7 @@ public class JsonToObject {
         return instance;
     }
 
-    private static void fieldSet(Field field, JSONObject json, Object instance) throws IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchMethodException {
+    private static void fieldSet(Field field, JSONObject json, Object instance) throws IllegalAccessException{
         Object value = json.get(field.getName());
         if (value instanceof String) {
             field.set(instance, value);
@@ -59,7 +59,7 @@ public class JsonToObject {
                     try {
                         field.setAccessible(true);
                         fieldSet(field, jsonObject, o1);
-                    } catch (IllegalAccessException | InvocationTargetException | InstantiationException | NoSuchMethodException e) {
+                    } catch (IllegalAccessException e) {
                         e.printStackTrace();
                     }
                 }
