@@ -9,14 +9,14 @@
 ## 어노테이션 기능설명
 어노테이션의 기본 구조는 다음과 같다.
 
-~~~
+```java
 @Target({ElementType.[적용대상]})
 @Retention(RetentionPolicy.[정보유지되는 대상])
 public @interface [어노테이션명]{
 	public 타입 elementName() [default 값]
     ...
 }
-~~~
+```
 
 @Target의 ElementType 적용대상은 아래 표와 같으며, 여기서 선언한 결과를 토대로 어노테이션의 적용대상을 정할 수 있다.
 어노테이션을 선언할 떄 변수를 선언하는 것이 아닌 어노테이션을 사용하는 클래스의 변수, 함수 등이 타겟이 되는 것이다.
