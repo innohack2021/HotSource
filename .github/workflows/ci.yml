@@ -9,8 +9,6 @@ on:
       - 'src/**'
     branches: [ main ]
   pull_request:
-    paths-ignore:
-      - 'GUIDELINE/**'
     paths:
       - 'src/**'
     branches: [ main ]
