@@ -15,31 +15,6 @@ import java.util.Map;
 
 public class Hello {
     public static void main(String[] args) {
-        JSONParser parser = new JSONParser();
-
-        try {
-            Object obj = parser.parse(new FileReader("test.json"));
-            JSONObject jsonObject = (JSONObject) obj;
-
-            Map<String, Object> map = new HashMap<String, Object>();
-            JSONObject jsonObj = (JSONObject) jsonObject.get("properties");
-            Iterator<String> keysItr = jsonObj.keySet().iterator();
-            while(keysItr.hasNext()) {
-                String key = keysItr.next();
-                Object value = jsonObj.get(key);
-                System.out.println(key + " : " + value);
-                if (value instanceof JSONArray) {
-
-                }
-                else if (value instanceof JSONObject) {
-
-                }
-                map.put(key, value);
-                System.out.println("test: " + map.get(key));
-            }
-        }
-        catch (Exception ex) {
-            ex.printStackTrace();
-        }
+        System.out.println("Hello");
     }
 }
