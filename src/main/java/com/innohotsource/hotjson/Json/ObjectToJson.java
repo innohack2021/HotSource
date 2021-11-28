@@ -22,6 +22,7 @@ public class ObjectToJson {
 
     /**
      * 전달받은 객체가 String 이 아니고 && 기본타입혹은 해당 기본 타입의 래퍼클래스가 아닌 경우
+     *
      * @param obj
      * @param map
      * @return
@@ -65,7 +66,8 @@ public class ObjectToJson {
                 continue;
             }
 
-            JSONObject newMap = toJson(value);
+            JSONObject newObject = new JSONObject();
+            JSONObject newMap = objectToJson(value, newObject);
             map.put(key, newMap);
         }
 
@@ -77,43 +79,84 @@ public class ObjectToJson {
     }
 
     // 리스트 내부의 값이 String 이거나 primitive 가 아닌 경우 재귀로 반복해서 실행되도록 수정해야함
-    private static JSONArray listToJson(List src, JSONArray newList) {
-        for (Object content : src) {
-            newList.add(content);
+    private static JSONArray listToJson(List src, JSONArray lst) throws IllegalAccessException {
+        for (Object value : src) {
+
+            if (isEndValue(value)) {
+                lst.add(value);
+                continue;
+            }
+
+            if (value instanceof List) {
+                JSONArray newList = new JSONArray();
+                lst.add(listToJson((List) value, newList));
+                continue;
+            }
+
+            if (value instanceof Map) {
+                JSONObject newMap = new JSONObject();
+                lst.add(mapToJson((Map) value, newMap));
+                continue;
+            }
+
+            JSONObject newObject = new JSONObject();
+            JSONObject newMap = objectToJson(value, newObject);
+            lst.add(newMap);
+
         }
-        return newList;
+        return lst;
     }
 
     // 맵 내부의 값이 String 이거나 primitive 가 아닌 경우 재귀로 반복해서 실행되도록 수정해야함
-    private static Object mapToJson(Map src, JSONObject newMap) {
+    private static Object mapToJson(Map src, JSONObject map) throws IllegalAccessException {
         Iterator iterator = src.keySet().iterator();
         while (iterator.hasNext()) {
             Object key = iterator.next();
             Object value = src.get(key);
-            newMap.put(key, value);
+
+            if (isEndValue(value)) {
+                map.put(key, value);
+                continue;
+            }
+
+            if (value instanceof List) {
+                JSONArray newList = new JSONArray();
+                map.put(key, listToJson((List) value, newList));
+                continue;
+            }
+
+            if (value instanceof Map) {
+                JSONObject newMap = new JSONObject();
+                map.put(key, mapToJson((Map) value, newMap));
+                continue;
+            }
+
+            JSONObject newObject = new JSONObject();
+            JSONObject newMap = objectToJson(value, newObject);
+            map.put(key, newMap);
         }
-        return newMap;
+        return map;
     }
 
     private static boolean isEndValue(Object value) {
 
-        if(value instanceof String){
+        if (value instanceof String) {
             return true;
         }
 
-        if(value instanceof Double){
+        if (value instanceof Double) {
             return true;
         }
 
-        if(value instanceof Float){
+        if (value instanceof Float) {
             return true;
         }
 
-        if(value instanceof Number){
+        if (value instanceof Number) {
             return true;
         }
 
-        if(value instanceof Boolean){
+        if (value instanceof Boolean) {
             return true;
         }
 
