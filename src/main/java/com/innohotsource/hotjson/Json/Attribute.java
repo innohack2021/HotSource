@@ -1,14 +1,14 @@
 package com.innohotsource.hotjson.Json;
 
 public class Attribute {
-    private boolean ignored;
 
+    private String pwd;
 
-    public Attribute(boolean ignored) {
-        this.ignored = ignored;
+    public Attribute(String pwd) {
+        this.pwd = pwd;
     }
 
-    public boolean isIgnored() {
-        return ignored;
+    public String getPwd() {
+        return pwd;
     }
 }
