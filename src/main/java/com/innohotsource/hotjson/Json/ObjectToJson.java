@@ -20,14 +20,6 @@ public class ObjectToJson {
 
     }
 
-    /**
-     * 전달받은 객체가 String 이 아니고 && 기본타입혹은 해당 기본 타입의 래퍼클래스가 아닌 경우
-     *
-     * @param obj
-     * @param map
-     * @return
-     * @throws IllegalAccessException
-     */
     private static JSONObject objectToJson(Object obj, JSONObject map) throws IllegalAccessException {
         Class<?> clazz = obj.getClass();
         Field[] fields = clazz.getDeclaredFields();
@@ -35,31 +27,25 @@ public class ObjectToJson {
 
             field.setAccessible(true);
             String key = field.getName();
-
             Object value = field.get(obj);
 
-            // String || primitive Wrapper 라면 바로 put
             if (isEndValue(value)) {
                 map.put(key, value);
                 continue;
             }
 
-//            정상작동하지 않는 코드 -> array 를 걸러내는 방법을 강구해야 할 듯
-//            if (value instanceof Arrays) {
-//                JSONArray newList = new JSONArray();
-//                System.out.println("array encountered");
-//                map.put(key, arrayToJson((Arrays) value, newList));
-//                continue;
-//            }
+            if (value.getClass().isArray()) {
+                JSONArray newList = new JSONArray();
+                map.put(key, arrayToJson((Object[]) value, newList));
+                continue;
+            }
 
-            // List 를 구현한 객체인지 확인
             if (value instanceof List) {
                 JSONArray newList = new JSONArray();
                 map.put(key, listToJson((List) value, newList));
                 continue;
             }
 
-            // Map 을 구현한 객체인지 확인
             if (value instanceof Map) {
                 JSONObject newMap = new JSONObject();
                 map.put(key, mapToJson((Map) value, newMap));
@@ -74,16 +60,17 @@ public class ObjectToJson {
         return map;
     }
 
-    private static Object arrayToJson(Arrays value, JSONArray newList) {
-        return null;
-    }
-
-    // 리스트 내부의 값이 String 이거나 primitive 가 아닌 경우 재귀로 반복해서 실행되도록 수정해야함
-    private static JSONArray listToJson(List src, JSONArray lst) throws IllegalAccessException {
-        for (Object value : src) {
+    private static JSONArray arrayToJson(Object[] arr, JSONArray lst) throws IllegalAccessException {
+        for (Object value : arr) {
 
             if (isEndValue(value)) {
                 lst.add(value);
+                continue;
+            }
+
+            if (value.getClass().isArray()) {
+                JSONArray newList = new JSONArray();
+                lst.add(arrayToJson((Object[]) value, newList));
                 continue;
             }
 
@@ -107,7 +94,40 @@ public class ObjectToJson {
         return lst;
     }
 
-    // 맵 내부의 값이 String 이거나 primitive 가 아닌 경우 재귀로 반복해서 실행되도록 수정해야함
+    private static JSONArray listToJson(List src, JSONArray lst) throws IllegalAccessException {
+        for (Object value : src) {
+
+            if (isEndValue(value)) {
+                lst.add(value);
+                continue;
+            }
+
+            if (value.getClass().isArray()) {
+                JSONArray newList = new JSONArray();
+                lst.add(arrayToJson((Object[]) value, newList));
+                continue;
+            }
+
+            if (value instanceof List) {
+                JSONArray newList = new JSONArray();
+                lst.add(listToJson((List) value, newList));
+                continue;
+            }
+
+            if (value instanceof Map) {
+                JSONObject newMap = new JSONObject();
+                lst.add(mapToJson((Map) value, newMap));
+                continue;
+            }
+
+            JSONObject newObject = new JSONObject();
+            JSONObject newMap = objectToJson(value, newObject);
+            lst.add(newMap);
+
+        }
+        return lst;
+    }
+
     private static Object mapToJson(Map src, JSONObject map) throws IllegalAccessException {
         Iterator iterator = src.keySet().iterator();
         while (iterator.hasNext()) {
@@ -116,6 +136,12 @@ public class ObjectToJson {
 
             if (isEndValue(value)) {
                 map.put(key, value);
+                continue;
+            }
+
+            if (value.getClass().isArray()) {
+                JSONArray newList = new JSONArray();
+                map.put(key, arrayToJson((Object[]) value, newList));
                 continue;
             }
 
