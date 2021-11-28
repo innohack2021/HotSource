@@ -17,7 +17,7 @@ public class ObjectToJson {
         for (Field field : fields) {
             field.setAccessible(true);
             String key = field.getName();
-            //ToDo Object 인 경우 || String, Wrapper Type 인 경우 || Array 인 경우??? 여튼 조건이 필요하다
+
             Object value = field.get(obj);
 
             if(value instanceof String){
