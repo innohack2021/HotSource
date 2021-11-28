@@ -49,7 +49,12 @@ public class JsonListToObjectTest {
          * "subSampleList":[{"subId":2,
          *                  "subList":[{"subSubName":"subsub","subSubId":1},{"subSubName":"subsub","subSubId":2}],
          *                  "subName":"sub2"}],
+<<<<<<< HEAD
          *                  "name":"sampleName","id":1}
+=======
+         * "name":"sampleName",
+         * "id":1}
+>>>>>>> 8e01b5ba368a1a9cdc831c8230d465bd1948a3a4
          */
 
         Sample1 sample1 = (Sample1) JsonToObject.fromJson(sample, new Sample1());

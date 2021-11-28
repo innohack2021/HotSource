@@ -30,3 +30,7 @@ public class FileToObject {
         return instance;
     }
 }
+
+class FileToObject0{
+    public
+}

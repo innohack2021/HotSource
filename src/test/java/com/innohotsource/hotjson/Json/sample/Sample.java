@@ -18,4 +18,16 @@ public class Sample {
                 ", subSample=" + subSample +
                 '}';
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public SubSample getSubSample() {
+        return subSample;
+    }
 }
