@@ -7,6 +7,7 @@ on:
   push:
     paths:
       - 'src/**'
+      - '.github/workflows/**'
     branches: [ main ]
   pull_request:
     paths:
@@ -14,8 +15,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
+  java8:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,7 +26,31 @@ jobs:
         java-version: '8'
         distribution: 'adopt'
         cache: gradle
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
+    - name: Build java 8
+      run: gradle build
+  
+  java11:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 11
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+        cache: gradle
+    - name: Build java 11
+      run: gradle build
+
+  java17:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 17
+      uses: actions/setup-java@v2
+      with:
+        java-version: '17'
+        distribution: 'adopt'
+        cache: gradle
+    - name: Build java 17
+      run: gradle build

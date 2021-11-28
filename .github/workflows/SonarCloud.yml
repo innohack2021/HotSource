@@ -3,13 +3,8 @@ on:
   push:
     paths:
       - 'src/**'
+      - '.github/workflows/SonarCloud.yml'
     branches: [ main ]
-  pull_request:
-    paths:
-      - 'src/**'
-    branches: [ main ]
-    types: [opened, synchronize, reopened]
-	  - main
 jobs:
   build:
     name: Build
@@ -38,4 +33,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew build sonarqube --info --warning-mode=all --stacktrace
+        run: gradle build sonarqube --info --warning-mode=all --stacktrace
