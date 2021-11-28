@@ -1,4 +1,4 @@
-package com.innohotsource.hotjson.Json;
+package com.innohotsource.hotjson.Json.sample;
 
 public class SubSample {
     private String subName;

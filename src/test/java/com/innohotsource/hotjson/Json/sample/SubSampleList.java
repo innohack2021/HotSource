@@ -1,4 +1,4 @@
-package com.innohotsource.hotjson.Json;
+package com.innohotsource.hotjson.Json.sample;
 
 import java.util.List;
 

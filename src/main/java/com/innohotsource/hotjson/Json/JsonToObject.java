@@ -33,26 +33,35 @@ public class JsonToObject {
 
     private static void fieldSet(Field field, JSONObject json, Object instance) throws IllegalAccessException{
         Object value = json.get(field.getName());
-        if (value instanceof String) {
+        if (field.getType() == Integer.class) {
             field.set(instance, value);
-        } else if (value instanceof Long) {
+            return ;
+        }
+        if (field.getType() == String.class) {
             field.set(instance, value);
-        } else if (value instanceof Integer) {
+            return ;
+        }
+        if (field.getType() == Long.class) {
             field.set(instance, value);
-        } else if (value instanceof Float) {
+            return ;
+        }
+        if (field.getType() == Float.class) {
             field.set(instance, value);
-        } else if (value instanceof Number) {
+            return ;
+        }
+        if (field.getType() == Number.class) {
             field.set(instance, value);
-        } else if (value instanceof List) {
+            return ;
+        }
+         if (field.getType() == List.class) {
             JSONArray jsonArray = (JSONArray) json.get(field.getName());
             field.set(instance,jsonArray);
+            return ;
             }
-        else if (json.get(field.getName()) != null) {
-                JSONObject jsonObject = (JSONObject) json.get(field.getName());
-                Class<?> clazz = field.getType();
-                Object tempObject = fromJson0(jsonObject, clazz);
-                field.set(instance, tempObject);
-            }
+         JSONObject jsonObject = (JSONObject) json.get(field.getName());
+         Class<?> clazz = field.getType();
+         Object tempObject = fromJson0(jsonObject, clazz);
+         field.set(instance, tempObject);
         }
 
     private static Object fromJson0(JSONObject jsonObject,Class<?> clazz){
