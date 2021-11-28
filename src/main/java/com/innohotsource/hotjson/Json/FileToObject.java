@@ -14,13 +14,6 @@ public class FileToObject {
     FileToObject(String pwd){
         this.pwd = pwd;
     }
-    public void getPwd(){
-        File dir = new File(pwd);
-        String[] filenames = dir.list();
-        for (String filename : filenames) {
-            System.out.println("filename : " + filename);
-        }
-    }
 
     public Object getFile(Object instance) {
         JSONParser parser = new JSONParser();
