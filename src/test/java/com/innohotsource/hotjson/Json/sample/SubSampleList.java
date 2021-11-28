@@ -5,6 +5,7 @@ import java.util.List;
 public class SubSampleList {
     private String subName;
     private Long subId;
+    private Sub sub;
     public List<Sub> subList;
 
     public String getSubName() {
@@ -15,16 +16,11 @@ public class SubSampleList {
         return subId;
     }
 
-    public List<Sub> getSubList() {
-        return subList;
+    public Sub getSub() {
+        return sub;
     }
 
-    @Override
-    public String toString() {
-        return "SubSampleList{" +
-                "subName='" + subName + '\'' +
-                ", subId=" + subId +
-                ", subList=" + subList +
-                '}';
+    public List<Sub> getSubList() {
+        return subList;
     }
 }

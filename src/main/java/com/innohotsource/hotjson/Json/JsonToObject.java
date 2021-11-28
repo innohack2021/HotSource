@@ -14,7 +14,6 @@ import java.util.List;
 
 
 /**
- * 제이슨
  *
  * @author Kim minsu
  * @version 1.0
@@ -123,4 +122,5 @@ public class JsonToObject {
         }
         return null;
     }
+
 }
