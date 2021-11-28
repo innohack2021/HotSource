@@ -30,9 +30,10 @@ class JsonToObjectTest {
          */
         System.out.println("jsonObject.toJSONString() = " + jsonObject.toJSONString());
 
-        JsonToObject jsonToObject = new JsonToObject();
-        Sample sample = (Sample) jsonToObject.fromJson(jsonObject, new Sample());
+
+        Sample sample = (Sample) JsonToObject.fromJson(jsonObject, new Sample());
         System.out.println("sample = " + sample);
+
 
     }
 

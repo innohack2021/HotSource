@@ -5,7 +5,19 @@ import java.util.List;
 public class Sample1 {
     private String name;
     private Long id;
-    private List<SubSample> subSampleList;
+    private List<SubSampleList> subSampleList;
+
+    public String getName() {
+        return name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public List<SubSampleList> getSubSampleList() {
+        return subSampleList;
+    }
 
     @Override
     public String toString() {
@@ -14,9 +26,5 @@ public class Sample1 {
                 ", id=" + id +
                 ", subSampleList=" + subSampleList +
                 '}';
-    }
-
-    public String getName() {
-        return name;
     }
 }

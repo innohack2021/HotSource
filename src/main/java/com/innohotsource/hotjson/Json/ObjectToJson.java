@@ -34,6 +34,7 @@ public class ObjectToJson {
 
             field.setAccessible(true);
             String key = field.getName();
+
             Object value = field.get(obj);
 
             // String || primitive Wrapper 라면 바로 put
