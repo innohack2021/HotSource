@@ -44,14 +44,22 @@ public class JsonListToObjectTest {
 
         sample.put("subSampleList", subSampleList);
         System.out.println("sample = " + sample.toJSONString());
-
+        /**
+         * sample = {
+         * "subSampleList":[{"subId":2,
+         *                  "subList":[{"subSubName":"subsub","subSubId":1},{"subSubName":"subsub","subSubId":2}],
+         *                  "subName":"sub2"}],
+         * "name":"sampleName",
+         * "id":1}
+         */
 
         Sample1 sample1 = (Sample1) JsonToObject.fromJson(sample, new Sample1());
-        System.out.println("sample1.tostring = " + sample1.toString());
+        System.out.println("sample1.getSubSampleList().get(0).getSubName() = " + sample1.getSubSampleList().get(0).getSubName());
 
         Assertions.assertEquals(sample1.getName(), "sampleName");
-        
-        
+        Assertions.assertEquals(sample1.getId(), 1L);
+        System.out.println("sample1.getSubSampleList().get(0).getSubList().get(1) = " + sample1.getSubSampleList().get(0).getSubList().get(1));
+//
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("name", "sampleName");
         jsonObject.put("id", 1L);
@@ -65,6 +73,6 @@ public class JsonListToObjectTest {
         jsonObject.put("subSample", jsonObejct1);
         System.out.println("jsonObject.toJSONString() = " + jsonObject.toJSONString());
         Sample sample2 = (Sample) JsonToObject.fromJson(jsonObject, new Sample());
-        System.out.println("sample2 = " + sample2.toString());
+        System.out.println("sample2 = " + sample2);
     }
 }

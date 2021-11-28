@@ -5,8 +5,18 @@ import java.util.List;
 public class SubSampleList {
     private String subName;
     private Long subId;
-    private Sub sub;
     public List<Sub> subList;
 
+    public String getSubName() {
+        return subName;
+    }
 
+    public Long getSubId() {
+        return subId;
+    }
+
+
+    public List<Sub> getSubList() {
+        return subList;
+    }
 }
