@@ -15,22 +15,21 @@ public class FileToObject {
         this.pwd = pwd;
     }
 
-    public Object getFile(Object instance) {
+    public <T> T getFile(Class<T> clazz) {
+        //<T> T instance;
+        T instance = null;
         JSONParser parser = new JSONParser();
         try (Reader reader = new FileReader(pwd)) {
-            JSONObject jsonObject = (JSONObject) parser.parse(reader);
-            instance = JsonToObject.fromJson(jsonObject, instance);
+            JSONObject json = (JSONObject) parser.parse(reader);
+            instance = JsonToObject.fromJson(json, clazz);
 
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ParseException e) {
             e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
         }
-
         return instance;
     }
-}
-
-class FileToObject0{
-    public
 }
