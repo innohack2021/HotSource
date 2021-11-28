@@ -34,7 +34,6 @@ class JsonToObjectTest {
         Sample sample = (Sample) jsonToObject.fromJson(jsonObject, new Sample());
         System.out.println("sample = " + sample);
 
-
     }
 
 }
