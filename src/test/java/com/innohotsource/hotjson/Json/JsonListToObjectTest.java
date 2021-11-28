@@ -1,5 +1,7 @@
 package com.innohotsource.hotjson.Json;
 
+import com.innohotsource.hotjson.Json.sample.Sample;
+import com.innohotsource.hotjson.Json.sample.Sample1;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -43,10 +45,26 @@ public class JsonListToObjectTest {
         sample.put("subSampleList", subSampleList);
         System.out.println("sample = " + sample.toJSONString());
 
-        JsonToObject json = new JsonToObject();
-        Sample1 sample1 = (Sample1) json.fromJson(sample, new Sample1());
+
+        Sample1 sample1 = (Sample1) JsonToObject.fromJson(sample, new Sample1());
         System.out.println("sample1.tostring = " + sample1.toString());
 
         Assertions.assertEquals(sample1.getName(), "sampleName");
+        
+        
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("name", "sampleName");
+        jsonObject.put("id", 1L);
+        JSONObject jsonObejct1 = new JSONObject();
+        jsonObejct1.put("subName", "subName");
+        jsonObejct1.put("subId", 1L);
+        JSONObject jsonObject2 = new JSONObject();
+        jsonObject2.put("subSubName", "subSubName");
+        jsonObject2.put("subSubId", 1L);
+        jsonObejct1.put("sub", jsonObject2);
+        jsonObject.put("subSample", jsonObejct1);
+        System.out.println("jsonObject.toJSONString() = " + jsonObject.toJSONString());
+        Sample sample2 = (Sample) JsonToObject.fromJson(jsonObject, new Sample());
+        System.out.println("sample2 = " + sample2.toString());
     }
 }

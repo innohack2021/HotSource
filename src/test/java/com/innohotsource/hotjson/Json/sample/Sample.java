@@ -1,8 +1,4 @@
-package com.innohotsource.hotjson.Json;
-
-import com.innohotsource.hotjson.annotation.IgnoredField;
-
-import java.util.List;
+package com.innohotsource.hotjson.Json.sample;
 
 public class Sample {
     public String name;
