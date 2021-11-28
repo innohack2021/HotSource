@@ -19,8 +19,7 @@ public class FileToObject {
         JSONParser parser = new JSONParser();
         try (Reader reader = new FileReader(pwd)) {
             JSONObject jsonObject = (JSONObject) parser.parse(reader);
-            JsonToObject Jto = new JsonToObject();
-            instance = Jto.fromJson(jsonObject, instance);
+            instance = JsonToObject.fromJson(jsonObject, instance);
 
         } catch (IOException e) {
             e.printStackTrace();
