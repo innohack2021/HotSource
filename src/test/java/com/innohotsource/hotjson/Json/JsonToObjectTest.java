@@ -1,9 +1,8 @@
 package com.innohotsource.hotjson.Json;
 
+import com.innohotsource.hotjson.Json.sample.Sample;
 import org.json.simple.JSONObject;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class JsonToObjectTest {
 
@@ -30,9 +29,10 @@ class JsonToObjectTest {
          *   }
          */
         System.out.println("jsonObject.toJSONString() = " + jsonObject.toJSONString());
-        JsonToObject jsonToObject = new JsonToObject();
 
-        Sample sample = (Sample) jsonToObject.fromJson(jsonObject, new Sample());
+
+
+        Sample sample =  JsonToObject.fromJson(jsonObject, Sample.class);
         System.out.println("sample = " + sample);
 
 
