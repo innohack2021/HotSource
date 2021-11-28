@@ -44,7 +44,9 @@ public class JsonToObject {
     /**
      * Constructor not available
      */
-    private JsonToObject(){}
+    private JsonToObject(){
+
+    }
 
     private static void fromJsonHide(JSONObject json, Object instance) {
         Field[] fields = instance.getClass().getDeclaredFields();
