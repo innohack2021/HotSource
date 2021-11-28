@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 public class JsonListToObjectTest {
     
     @Test
-    void ListToObject(){
+    void ListToObject() throws IllegalAccessException {
         JSONObject sample = new JSONObject();
         sample.put("name", "sampleName");
         sample.put("id", 1L);
@@ -49,11 +49,15 @@ public class JsonListToObjectTest {
          * "subSampleList":[{"subId":2,
          *                  "subList":[{"subSubName":"subsub","subSubId":1},{"subSubName":"subsub","subSubId":2}],
          *                  "subName":"sub2"}],
+<<<<<<< HEAD
+         *                  "name":"sampleName","id":1}
+=======
          * "name":"sampleName",
          * "id":1}
+>>>>>>> 8e01b5ba368a1a9cdc831c8230d465bd1948a3a4
          */
 
-        Sample1 sample1 = (Sample1) JsonToObject.fromJson(sample, new Sample1());
+        Sample1 sample1 =  JsonToObject.fromJson(sample, Sample1.class);
         System.out.println("sample1.getSubSampleList().get(0).getSubName() = " + sample1.getSubSampleList().get(0).getSubName());
 
         Assertions.assertEquals(sample1.getName(), "sampleName");
@@ -72,7 +76,7 @@ public class JsonListToObjectTest {
         jsonObejct1.put("sub", jsonObject2);
         jsonObject.put("subSample", jsonObejct1);
         System.out.println("jsonObject.toJSONString() = " + jsonObject.toJSONString());
-        Sample sample2 = (Sample) JsonToObject.fromJson(jsonObject, new Sample());
+        Sample sample2 = JsonToObject.fromJson(jsonObject, Sample.class);
         System.out.println("sample2 = " + sample2);
     }
 }
