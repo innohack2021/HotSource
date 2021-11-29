@@ -20,11 +20,23 @@ public class SubSample {
         return subName;
     }
 
+    public void setSubName(String subName) {
+        this.subName = subName;
+    }
+
     public Long getSubId() {
         return subId;
     }
 
+    public void setSubId(Long subId) {
+        this.subId = subId;
+    }
+
     public Sub getSub() {
         return sub;
+    }
+
+    public void setSub(Sub sub) {
+        this.sub = sub;
     }
 }

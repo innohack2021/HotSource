@@ -4,10 +4,20 @@ import org.json.simple.*;
 
 import java.lang.reflect.Field;
 import java.util.*;
-
+/**
+ * auto convert object to json
+ * @filename : ObjectToJson.java
+ * @description : ObjectToJson impl
+ */
 public class ObjectToJson {
 
-    public static JSONObject toJson(Object obj) throws IllegalArgumentException, IllegalAccessException {
+    /**
+     * Create a JsonObject and bind data from the given object as parameter.
+     * @param obj Object to get data.
+     * @return jsonObject converted from given object.
+     * @throws IllegalAccessException
+     */
+    public static JSONObject toJson(Object obj) throws IllegalAccessException, IllegalAccessException {
 
         if (isEndValue(obj)) {
             throw new IllegalArgumentException("argument is a instance of String or primitive value");
@@ -20,6 +30,12 @@ public class ObjectToJson {
 
     }
 
+    /**
+     * Create String and write data from the given object as parameter.
+     * @param obj Object to get data.
+     * @return JSON formatted String converted from given object
+     * @throws IllegalAccessException
+     */
     public static String toJsonString(Object obj) throws IllegalAccessException {
         return toJson(obj).toJSONString();
     }
