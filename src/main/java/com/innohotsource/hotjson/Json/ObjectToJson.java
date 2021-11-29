@@ -4,20 +4,25 @@ import org.json.simple.*;
 
 import java.lang.reflect.Field;
 import java.util.*;
+
 /**
+ * <p>
  * auto convert object to json
- * @filename : ObjectToJson.java
- * @description : ObjectToJson impl
+ * </p>
+ *
+ * @author cho wonwoo
+ * @version 1.1
  */
 public class ObjectToJson {
+
 
     /**
      * Create a JsonObject and bind data from the given object as parameter.
      * @param obj Object to get data.
      * @return jsonObject converted from given object.
-     * @throws IllegalAccessException
-     */
-    public static JSONObject toJson(Object obj) throws IllegalAccessException, IllegalAccessException {
+     * @throws IllegalAccessException argument is a instance of String or primitive value
+     **/
+    public static JSONObject toJson(Object obj) throws IllegalAccessException {
 
         if (isEndValue(obj)) {
             throw new IllegalArgumentException("argument is a instance of String or primitive value");
