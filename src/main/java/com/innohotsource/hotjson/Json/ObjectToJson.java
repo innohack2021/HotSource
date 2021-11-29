@@ -12,9 +12,9 @@ import java.util.*;
 public class ObjectToJson {
 
     /**
-     * Create an JsonObject and initialize it to the value of Object.
-     * @param obj Object you want to put as input
-     * @return jsonObject full of json data
+     * Create a JsonObject and bind data from the given object as parameter.
+     * @param obj Object to get data.
+     * @return jsonObject converted from given object.
      * @throws IllegalAccessException
      */
     public static JSONObject toJson(Object obj) throws IllegalAccessException, IllegalAccessException {
@@ -30,6 +30,12 @@ public class ObjectToJson {
 
     }
 
+    /**
+     * Create String and write data from the given object as parameter.
+     * @param obj Object to get data.
+     * @return JSON formatted String converted from given object
+     * @throws IllegalAccessException
+     */
     public static String toJsonString(Object obj) throws IllegalAccessException {
         return toJson(obj).toJSONString();
     }
