@@ -11,7 +11,7 @@ public class FileToObjectTest {
         String pwd = "./src/test/java/com/innohotsource/hotjson/Json/samplefile/Sample.json";
 
         FileToObject file = new FileToObject(pwd);
-        Sample sample = (Sample) file.getFile(Sample.class);
+        Sample sample = file.getFile(Sample.class);
         System.out.println("sample = " + sample);
         Assertions.assertEquals(sample.getId(), 1L);
 
