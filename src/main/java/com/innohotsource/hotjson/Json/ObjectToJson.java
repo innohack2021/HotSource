@@ -7,7 +7,7 @@ import java.util.*;
 
 public class ObjectToJson {
 
-    public static JSONObject toJson(Object obj) throws IllegalAccessException {
+    public static JSONObject toJson(Object obj) throws IllegalArgumentException, IllegalAccessException {
 
         if (isEndValue(obj)) {
             throw new IllegalArgumentException("argument is a instance of String or primitive value");
@@ -18,6 +18,10 @@ public class ObjectToJson {
         JSONObject jsonObject = new JSONObject();
         return objectToJson(obj, jsonObject);
 
+    }
+
+    public static String toJsonString(Object obj) throws IllegalAccessException {
+        return toJson(obj).toJSONString();
     }
 
     private static JSONObject objectToJson(Object obj, JSONObject map) throws IllegalAccessException {
