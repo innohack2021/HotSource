@@ -83,9 +83,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.innohack2021:HotSource:1.1'
-
-	// https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
+    implementation 'com.github.innohack2021:HotSource:1.2'
     implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
 }
 ```
