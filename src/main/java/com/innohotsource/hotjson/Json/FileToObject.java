@@ -22,7 +22,7 @@ public class FileToObject {
      * setting path
      * @param pwd file path
      */
-    FileToObject(String pwd){
+    public FileToObject(String pwd){
         this.pwd = pwd;
     }
 
