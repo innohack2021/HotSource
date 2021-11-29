@@ -15,7 +15,6 @@ public class SubSampleList {
         return subId;
     }
 
-
     public List<Sub> getSubList() {
         return subList;
     }

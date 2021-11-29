@@ -116,6 +116,7 @@ public class JsonToObject {
     private static Object fromJson0(JSONObject jsonObject,Class<?> clazz) throws IllegalAccessException {
         Field[] fields = clazz.getDeclaredFields();
         Object o1 = createInstance(clazz);
+
         Arrays.stream(fields).forEach(
                 field -> {
                     try {
@@ -137,4 +138,5 @@ public class JsonToObject {
         }
         return null;
     }
+
 }

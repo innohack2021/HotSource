@@ -102,7 +102,7 @@
 * ### 3. Branch 생성 및 변경
     > Branch를 생성하는 방법은 $ git branch branchName main 명령어를 사용하여
 
-    > 만들고자 하는 브런치이름을 branchName에 작성하고, main 은 분기해 나올 branch를 작성한다.
+    > 만들고자 하는 브랜치이름을 branchName에 작성하고, main 은 분기해 나올 branch를 작성한다.
 
     > 본 프로젝트의 기본 branch는 main이기 때문에 main을 넣었다.
 
@@ -115,18 +115,21 @@
     git branch sungjcho main
 
 
-    > 변경하기 위해서는 switch 명령을 사용하여, 브런치 변경 후 작업을 해야 한다.
+    > 변경하기 위해서는 switch 명령을 사용하여, 브랜치 변경 후 작업을 해야 한다.
 
-    > 현재 컴퓨터 깃 버전이 2.17.1 이라, git checkout 명령을 사용해야 브런치 명 변경이 가능하다.
+    > 현재 컴퓨터 깃 버전이 2.17.1 이라, git checkout 명령을 사용해야 브랜치 명 변경이 가능하다.
 
 <br/>
 <br/>
 <br/>
 
-<img src="./img/switch_branch.JPG" width="600" height="50"/>
 
-
-    git checkout sungjcho
+    기본적으로 switch 명령어로 브랜치를 변경할 수 있다.
+    필자는 깃버전이 낮아서 checkout을 써야한다.
+    
+    git switch sungjcho
+    //git checkout sungjcho (깃 버전 낮을 때)
+    
 
 
 
@@ -163,13 +166,13 @@ git push
 
 > 그 후 Fetch and Merge 클릭
 
-> 그러면 로컬과 자신의 레포지토리가 같아질 것이다.
+> 그러면 원본 레포지토리와 포크한 레포지도리가 같아질 것이다.
 
 <br/>
 <br/><br/><br/><br/>
 
 * ### 6. Pull Request 
-    > main에 자신의 코드를 병합하기 위해서는 pull 을 요청해야 한다.
+    > 자신의 코드를 병합(Merge)하기 위해서는 pull 을 요청해야 한다.
 
     > 자신의 레포지토리에 변화가 생기면 compare and pull request 버튼이 활성화된다.
 
@@ -233,6 +236,7 @@ git push
 <img src="./img/Merge3.JPG" width="700" height="500"/>
 
 > 승인하면 changed approved가 나오고, 최종적으로 Merge하기 위해 Squash and merge를 누른다.
+> squash and merge는 많은 커밋들을 하나로 묶어서 처리하고 병합한다.
 
 
 <br/><br/><br/>
@@ -240,7 +244,7 @@ git push
 
 <img src="./img/Merge4.JPG" width="700" height="500"/>
 
-> 마지막으로 comment와 confirm Squash and merge를 누르면 Merge가 된다.
+> 마지막으로 comment를 적고 Merge한다.
 
 <br/>
 
@@ -276,14 +280,4 @@ git push
 <br/>
 <br/><br/><br/>
 
-    2. 코드 commit 후 PR 작성
-
-    > PR은 위에서 발행한 PR과 같이 진행한다.
-
-<br/>
-<br/>
-
-    3. 관리자가 Merge
-
-    > Merge는 위에서 관리자 Merge작업과 동일하게 진행한다.
     
