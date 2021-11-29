@@ -30,10 +30,14 @@ public class JsonToObject {
      * @param <T> Generic Type
      * @return instance full of json data
      * @throws IllegalAccessException unable to create instance.
+     * @throws NullPointerException result is Null.
      */
-    public static <T> T fromJson(JSONObject json,Class<T> clazz) throws IllegalAccessException {
+    public static <T> T fromJson(JSONObject json,Class<T> clazz) throws IllegalAccessException, NullPointerException {
         T instance = createInstance(clazz);
         fromJsonHide(json, instance);
+        if (instance == null) {
+            throw new NullPointerException("The generated result value is null");
+        }
         return instance;
     }
 

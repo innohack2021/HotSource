@@ -13,16 +13,16 @@ import java.util.*;
  * @author cho wonwoo
  * @version 1.1
  */
-
 public class ObjectToJson {
 
+
     /**
-     * Create an JsonObject and initialize it to the value of Object.
-     * @param obj Object you want to put as input
-     * @return jsonObject full of json data
-     * @throws IllegalAccessException unable to create instance.
-     */
-    public static JSONObject toJson(Object obj) throws IllegalAccessException, IllegalAccessException {
+     * Create a JsonObject and bind data from the given object as parameter.
+     * @param obj Object to get data.
+     * @return jsonObject converted from given object.
+     * @throws IllegalAccessException argument is a instance of String or primitive value
+     **/
+    public static JSONObject toJson(Object obj) throws IllegalAccessException {
 
         if (isEndValue(obj)) {
             throw new IllegalArgumentException("argument is a instance of String or primitive value");
@@ -35,6 +35,12 @@ public class ObjectToJson {
 
     }
 
+    /**
+     * Create String and write data from the given object as parameter.
+     * @param obj Object to get data.
+     * @return JSON formatted String converted from given object
+     * @throws IllegalAccessException
+     */
     public static String toJsonString(Object obj) throws IllegalAccessException {
         return toJson(obj).toJSONString();
     }
