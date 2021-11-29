@@ -19,6 +19,7 @@ class JsonToObjectTest {
 
         JSONObject sub = new JSONObject();
         sub.put("subSubName", "sub");
+        sub.put("subSubId", 1L);
         jsonObject1.put("sub",sub);
         jsonObject.put("subSample", jsonObject1);
         /**
@@ -29,8 +30,6 @@ class JsonToObjectTest {
          *   }
          */
         System.out.println("jsonObject.toJSONString() = " + jsonObject.toJSONString());
-
-
 
         Sample sample =  JsonToObject.fromJson(jsonObject, Sample.class);
         System.out.println("sample = " + sample);

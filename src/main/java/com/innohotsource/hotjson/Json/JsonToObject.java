@@ -1,7 +1,4 @@
-/**
- * @filename : JsonToObject.java
- * @description : JsonToObject impl
- */
+
 package com.innohotsource.hotjson.Json;
 
 import org.json.simple.JSONArray;
@@ -17,23 +14,42 @@ import java.util.List;
 
 
 /**
+ * <p>
+ * auto convert json to object
+ * </p>
+ *
  * @author Kim minsu
- * @version 1.0
+ * @version 1.1
  */
 public class JsonToObject {
 
     /**
-     * Fill in the jsonObject value to the instance.
+     * Create an instance and initialize it to the value of JsonObject.
      * @param json JsonObject you want to put as input
      * @param clazz clazz that wants to receive input class
+     * @param <T> Generic Type
      * @return instance full of json data
+     * @throws IllegalAccessException unable to create instance.
+     * @throws NullPointerException result is Null.
      */
-    public static <T> T fromJson(JSONObject json,Class<T> clazz) throws IllegalAccessException {
+    public static <T> T fromJson(JSONObject json,Class<T> clazz) throws IllegalAccessException, NullPointerException {
         T instance = createInstance(clazz);
         fromJsonHide(json, instance);
+        if (instance == null) {
+            throw new NullPointerException("The generated result value is null");
+        }
         return instance;
     }
 
+    /**
+     * Create an instance and initialize it to the value of String
+     * @param json String you want to put as input
+     * @param clazz clazz that wants to receive input class
+     * @param <T> GenericType
+     * @return instance full of json data
+     * @throws IllegalAccessException unable to create instance.
+     * @throws ParseException unable to parse
+     */
     public static <T> T fromJsonString(String json, Class<T> clazz) throws IllegalAccessException, ParseException {
         JSONParser jsonParser = new JSONParser();
         T instance = createInstance(clazz);
@@ -121,9 +137,10 @@ public class JsonToObject {
     private static <T> T createInstance(Class<T> classType) throws IllegalAccessException {
         try {
             return classType.getConstructor().newInstance();
-        }catch (IllegalAccessException | NoSuchMethodException | InstantiationException | InvocationTargetException e) {
-            throw new IllegalAccessException("주어진 클래스의 생성자를 만들 수 없습니다.");
+        }catch (IllegalAccessException | InstantiationException | InvocationTargetException | NoSuchMethodException e) {
+            e.printStackTrace();
         }
+        return null;
     }
 
 }
