@@ -26,7 +26,7 @@ sample.id = (Long) jsonObject.get("id");
 ```java
 Sample sample =  JsonToObject.fromJson(jsonObject, Sample.class);
 ```
-<br/><br/>
+<br/>
 
 #### 인스턴스를 json형태로 저장
 Sample 클래스 인스턴스를 이용해 다음의 json 형식을 가진 jsonObject를 만들어 봅시다.
@@ -50,8 +50,8 @@ json.put("subSample", list);
 ```java
 JSONObject json = ObjectToJson.toJson(testSample);
 ```
-
-<br/><br/>
+.
+<br/>
 
 #### 그 외 etc 기능
 ```java
@@ -70,6 +70,8 @@ FileToObject file = new FileToObject(pwd);
 Sample sample = file.getFile(Sample.class);
 ```
 
+<br/><br/>
+
 ## build.gradle
 다음 코드를 Gradle 파일에 추가하시면 됩니다.
 ```
@@ -81,12 +83,14 @@ dependencies {
     implementation 'com.github.innohack2021:HotSource:1.0'
 }
 ```
+<br/><br/>
 
 ## 기여 튜토리얼
 해당 오픈소스에는 json을 file에 저장하는 기능을 지원하지 않습니다.<br/>
 오픈소스 코드를 분석해 ObjectToFile클래스를 만들어 기여 해보세요.<br/>
 코드 분석에 어려움이 있다면 [GUIDELINE](https://github.com/innohack2021/HotSource/tree/main/GUIDELINE)을 참고해 보세요.<br/>
 
+<br/><br/>
 
 ## License
 ```
