@@ -19,4 +19,13 @@ public class SubSampleList {
     public List<Sub> getSubList() {
         return subList;
     }
+
+    @Override
+    public String toString() {
+        return "SubSampleList{" +
+                "subName='" + subName + '\'' +
+                ", subId=" + subId +
+                ", subList=" + subList +
+                '}';
+    }
 }
