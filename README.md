@@ -1,7 +1,10 @@
 # HotSource
-오픈소스 [json-simple](https://github.com/fangyidong/json-simple)라이브러리를 더 사용하기 쉽도록 경량화한 버전입니다.<br/>
+오픈소스 [json-simple](https://github.com/fangyidong/json-simple)라이브러리를 사용하여 Java Object  쉽도록 경량화한 버전입니다.<br/>
 코드분석에 어려움을 느낀다면 [여기를 클릭](https://github.com/innohack2021/HotSource/tree/main/GUIDELINE) 해 가이드라인을 통한 학습을 하시길 바랍니다.
 <br/><br/>
+
+## API docs
+[API docs](https://innohack2021.github.io/HotSource/)
 
 ## 기능
 HotSource는 다음과 같은 코드의 간편화를 제공합니다.<br/>
@@ -50,7 +53,7 @@ json.put("subSample", list);
 ```java
 JSONObject json = ObjectToJson.toJson(testSample);
 ```
-.
+
 <br/>
 
 #### 그 외 etc 기능
@@ -80,7 +83,10 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.innohack2021:HotSource:1.0'
+    implementation 'com.github.innohack2021:HotSource:1.1'
+
+	// https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
+    implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
 }
 ```
 <br/><br/>
