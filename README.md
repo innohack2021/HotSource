@@ -1,5 +1,5 @@
 # HotSource
-오픈소스 [json-simple](https://github.com/fangyidong/json-simple)라이브러리를 더 사용하기 쉽도록 경량화한 버전입니다.
+오픈소스 [json-simple](https://github.com/fangyidong/json-simple)라이브러리를 더 사용하기 쉽도록 경량화한 버전입니다.<br/>
 코드분석에 어려움을 느낀다면 [여기를 클릭](https://github.com/innohack2021/HotSource/tree/main/GUIDELINE) 해 가이드라인을 통한 학습을 하시길 바랍니다.
 <br/><br/>
 
@@ -9,11 +9,11 @@ HotSource는 다음과 같은 코드의 간편화를 제공합니다.<br/>
 <br/>
 
 #### json 파일 인스턴스로 받기
-다음의 json 형식을 가진 jsonObject변수가 있다 가정
+다음의 json 형식을 가진 jsonObject변수와 json 파일을 받을 수 있는 모델 클래스 Sample이 있다고 가정해 봅시다.
 ```
 {"name":"testName","id":1,"subSample":{"subId":2,"sub":{"subSubName":"sub"},"subName":"aaaa"}}
 ```
-##### json-simple
+##### json-simple 예제
 ```java
 Sample sample = new Sample();
 sample.name = (String) jsonObject.get("name");
@@ -22,13 +22,14 @@ sample.id = (Long) jsonObject.get("id");
 ???...//json 중간에 리스트 때문에 코드 작성의 어려움 발생
 
 ```
-##### HotSource
+##### HotSource 예제
 ```java
 Sample sample =  JsonToObject.fromJson(jsonObject, Sample.class);
 ```
+<br/><br/>
 
 #### 인스턴스를 json형태로 저장
-어떤 클래스 인스턴스를 이용해 다음의 json 형식을 가진 jsonObject를 만들어보자.
+Sample 클래스 인스턴스를 이용해 다음의 json 형식을 가진 jsonObject를 만들어 봅시다.
 ```
 {"name":"tHotSource","id":2021,"subSample":{"HotSource01","HotSource02","HotSource03"}}
 ```
@@ -50,6 +51,8 @@ json.put("subSample", list);
 JSONObject json = ObjectToJson.toJson(testSample);
 ```
 
+<br/><br/>
+
 #### 그 외 etc 기능
 ```java
 //String 형태의 json과 클래스 형식을 넣었을 때, 해당 클래스 인스턴스에 json값을 넣어 반환
@@ -67,11 +70,14 @@ FileToObject file = new FileToObject(pwd);
 Sample sample = file.getFile(Sample.class);
 ```
 
-## Download
+## build.gradle
+다음 코드를 Gradle 파일에 추가하시면 됩니다.
 ```
+repositories {
+    maven { url "https://jitpack.io" }
+}
+
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     implementation 'com.github.innohack2021:HotSource:1.0'
 }
 ```
