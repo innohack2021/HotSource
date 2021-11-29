@@ -1,8 +1,4 @@
-/**
- * auto convert json to object
- * @filename : JsonToObject.java
- * @description : JsonToObject impl
- */
+
 package com.innohotsource.hotjson.Json;
 
 import org.json.simple.JSONArray;
@@ -18,8 +14,12 @@ import java.util.List;
 
 
 /**
+ * <p>
+ * auto convert json to object
+ * </p>
+ *
  * @author Kim minsu
- * @version 1.0
+ * @version 1.1
  */
 public class JsonToObject {
 

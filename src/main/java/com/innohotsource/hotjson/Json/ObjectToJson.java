@@ -4,18 +4,23 @@ import org.json.simple.*;
 
 import java.lang.reflect.Field;
 import java.util.*;
+
 /**
+ * <p>
  * auto convert object to json
- * @filename : ObjectToJson.java
- * @description : ObjectToJson impl
+ * </p>
+ *
+ * @author cho wonwoo
+ * @version 1.1
  */
+
 public class ObjectToJson {
 
     /**
      * Create an JsonObject and initialize it to the value of Object.
      * @param obj Object you want to put as input
      * @return jsonObject full of json data
-     * @throws IllegalAccessException
+     * @throws IllegalAccessException unable to create instance.
      */
     public static JSONObject toJson(Object obj) throws IllegalAccessException, IllegalAccessException {
 
