@@ -5,8 +5,23 @@ import org.json.simple.*;
 import java.lang.reflect.Field;
 import java.util.*;
 
+/**
+ * <p>
+ * auto convert object to json
+ * </p>
+ *
+ * @author cho wonwoo
+ * @version 1.1
+ */
 public class ObjectToJson {
 
+
+    /**
+     * Create a JsonObject and bind data from the given object as parameter.
+     * @param obj Object to get data.
+     * @return jsonObject converted from given object.
+     * @throws IllegalAccessException argument is a instance of String or primitive value
+     **/
     public static JSONObject toJson(Object obj) throws IllegalAccessException {
 
         if (isEndValue(obj)) {
@@ -18,6 +33,16 @@ public class ObjectToJson {
         JSONObject jsonObject = new JSONObject();
         return objectToJson(obj, jsonObject);
 
+    }
+
+    /**
+     * Create String and write data from the given object as parameter.
+     * @param obj Object to get data.
+     * @return JSON formatted String converted from given object
+     * @throws IllegalAccessException
+     */
+    public static String toJsonString(Object obj) throws IllegalAccessException {
+        return toJson(obj).toJSONString();
     }
 
     private static JSONObject objectToJson(Object obj, JSONObject map) throws IllegalAccessException {

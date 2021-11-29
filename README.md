@@ -54,7 +54,6 @@ json.put("subSample", list);
 ```java
 JSONObject json = ObjectToJson.toJson(testSample);
 ```
-
 <br/>
 
 #### 그 외 etc 기능
